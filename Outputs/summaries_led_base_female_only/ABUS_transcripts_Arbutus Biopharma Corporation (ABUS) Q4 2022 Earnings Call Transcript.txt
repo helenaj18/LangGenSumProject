@@ -1,0 +1,8 @@
+ we report our fourth quarter and year-end 2022 financial results and provide an update on our ongoing efforts to develop a functional cure for chronic hepatitis b virus and a novel and superior treatment for coronavirus outbreaks.    
+ our strategy is to target two essential enzymes critical for bio-replication and that are highly conserved across all known coronaviruses.  
+ these two targets are the sARS-CoV-2 nsp5 main proteases, also known as EMPro; and the nsp12 viral polymerase.  
+ we plan to identify compounds that target each of these essential enzymes, develop those compounds and ultimately combine them to pursue an optimized treatment regimen that is safe, effective, convenient and able to address current and future coronavirus strains.    
+ we have discovered and nominated an mPRO inhibitor as our lead oral coronavirus drug candidate.  
+ this compound is highly potent with an IC of 5050 against the enzyme in singleomolar and has equal potency against all known mARS-2 variants.  
+ it also has selective activity against known mARS-2 variants.    
+ the preclinical activity of this compound is consistent with the potential for convenient d
