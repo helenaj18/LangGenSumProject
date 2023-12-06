@@ -43,17 +43,22 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 This section describes the files used to scrape SeekingAlpha and generate the summaries. 
 
 ### GetTickers.py
+This file gets the tickers needed for the web scraping. It does so by taking tickers for publicly listed companies, using the listing_status.csv file gotten from Alpha Vantage. These symbols are then used to webscrape Seeking Alpha for each of the symbols. This was done for about 2000 companies and html files were the output.
 
 ### Scraper.py
+This file scrapes the data from Seeking alpha
 
 ### Transcripts.py
+This file assists Scraper.py to collect the data scraped in a nice way.
+
+### html_to_txt.py
+This file was used to change html content from the webscraping to txt content to be able to make summaries. I ended up with 203 text transcripts and then stopped because that was enough. Two target html classes were used to get the transcript and no unnecessary data.
 
 ### make_summaries.py
 
-## Make_summaries_alpaca.py
+### make_summaries_alpaca.py
 
-
-## make_summaries_longt5.py
+### make_summaries_longt5_CG.py
 
 
 ### create_datasets.py
@@ -63,8 +68,7 @@ This function was used to create datasets of summaries with only male names and 
 python3 create_datasets.py
 ```
 
-### html_to_txt.py
-This file was used to change html content from the webscraping to txt content
+
 
 ### file_checker.py
 This file was just used to check how many files were in the summary folder, to see how much data had been gathered when running the make_summaries.py function. Run like this:
@@ -82,19 +86,23 @@ This section describes the files used to do the experiments
 
 ## Evaluations
 
-### mean_ppl.py
+## evaluation.py
+This function combines multiple evaluations in one file. The *folder_path* string can be changed to check for other models. It calculates inclusion bias, hallucination bias, representation bias, sentiment, and perplexity.
 
 ### avg_length_data.py 
-Used to calculate the average length of the summaries. The string "folder_path" was changed to account for summaries of different models. This code is run in this way, in the Code folder:
+Used to calculate the average length of the summaries. The string *folder_path* was changed to account for summaries of different models. This code is run in this way, in the Code folder:
 ```
 python3 avg_length_data.py
 ```
-## inclusion_bias.py
+
+
+## Files not used in final implementation:
+
+### mean_ppl.py
+This file calculates the mean perplexity over all the summaries of a specific model.
+
 
 ## sentiment_analysis.py
-
-
-----
-## data_gathering.ipynb - TODO: eyða?
+This function calculates the average sentiment of all summaries for each model. The *folder_path* is changed to include different models. The sentiment is calculated using TextBlob: https://textblob.readthedocs.io/en/dev/
 
 

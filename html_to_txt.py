@@ -12,15 +12,13 @@ files = glob.glob(os.path.join(folder_path, file_pattern))
 
 # Iterate over the files
 for filename in files:
-    # You can perform operations on each file here
-    # For example, print the file name
     with open(filename) as file:
         html_content = file.read()
     
     # Create a BeautifulSoup object to parse the HTML
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Define the target div class name
+    # I also used this target class:
     # target_class = "jc_is jc_EZ"
     target_class = "jd_l5 s_et"
 

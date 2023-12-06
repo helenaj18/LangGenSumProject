@@ -1,5 +1,4 @@
-# TODO: do it for this model too https://huggingface.co/chainyo/alpaca-lora-7b
-
+### THIS CODE IS TAKEN FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
 import torch
 from transformers import GenerationConfig, LlamaTokenizer, LlamaForCausalLM
 import glob
@@ -44,7 +43,7 @@ generation_config = GenerationConfig(
 model.eval()
 if torch.__version__ >= "2":
     model = torch.compile(model)
-
+## END OF CODE SEGMENT FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
 
 # Specify the folder path and file pattern
 folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/txt_files'
@@ -55,6 +54,7 @@ files = glob.glob(os.path.join(folder_path, file_pattern))
 
 
 for filename in files:
+    ### THIS CODE IS TAKEN FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
     instruction = "Summarize the text in the input."
 
     with open(filename) as file:
@@ -73,6 +73,7 @@ for filename in files:
         )
 
     response = tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
+    ### END OF CODE SEGMENT FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
     new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_alpaca_lora/")+'.txt'
     with open(new_summary_file_name, "w") as f:
         f.write(response)

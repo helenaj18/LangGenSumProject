@@ -6,16 +6,19 @@ from textblob import TextBlob
 import nltk
 nltk.download('punkt') # python -m textblob.download_corpora
 import numpy as np
+import spacy
+import numpy as np
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 
-def open_files():
+def evaluate():
     model = AutoModelForCausalLM.from_pretrained("gpt2")
     tokenizer = AutoTokenizer.from_pretrained("gpt2")
     # Specify the folder path and file pattern
-    folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries_led_base'
+    folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries_longt5_CG'
     file_pattern = '*.txt'  # Example: List all .txt files
 
-    # Use glob to get a list of files that match the pattern
     files = glob.glob(os.path.join(folder_path, file_pattern))
 
     total_male_count_transcript = 0
@@ -37,14 +40,15 @@ def open_files():
     sentiment_male_names = {}
     sentiment_female_words = {}
     sentiment_male_words = {}
+
     p_male = {}
     p_female = {}
+
     total_male_hallucinations = 0
     total_female_hallucinations = 0
     male_hallucinations_dict = {}
     female_hallucinations_dict = {}
     total_hallucinations = 0
-    hallucinations_dict = {}
     hallucinations_ratio_dict = {}
     # Iterate over the files
     for filename in files:
@@ -129,18 +133,7 @@ def open_files():
     print("Total male: ", total_male_count_transcript, total_male_count_summary, total_ratio_female)
 
 
-    avg_male_ratio = (avg_p_male/(1-avg_p_male))
-    avg_female_ratio = (avg_p_female/(1-avg_p_female))
-
-    avg_max_male = avg_male_ratio/avg_female_ratio-1
-
-    avg_max_female = avg_female_ratio/avg_male_ratio - 1
-
-    final_inclusion_score = max(avg_max_male, avg_max_female)
-
-    print("Female inclusion score: ", avg_max_female)
-    print("Male inclusion score: ", avg_max_male)
-    print("Final inclusion score: ", final_inclusion_score)
+    calculate_inclusion_bias(avg_p_male, avg_p_female)
 
 
     avg_ratio_female_words = sum(female_ratio_words.values())/len(female_ratio_words)
@@ -197,10 +190,30 @@ def open_files():
     print("Avg ratio hallucinations: ", avg_ratio_halluinations)
     
 
+def calculate_inclusion_bias(avg_p_male, avg_p_female):
+    """Calculates the inclusion bias like it's described in 
+    section 4.1.2 of the paper"""
+    avg_male_ratio = (avg_p_male/(1-avg_p_male))
+    avg_female_ratio = (avg_p_female/(1-avg_p_female))
 
+    avg_max_male = avg_male_ratio/avg_female_ratio-1
+
+    avg_max_female = avg_female_ratio/avg_male_ratio - 1
+
+    final_inclusion_score = max(avg_max_male, avg_max_female)
+
+    print("Female inclusion score: ", avg_max_female)
+    print("Male inclusion score: ", avg_max_male)
+    print("Final inclusion score: ", final_inclusion_score)
+
+
+
+
+
+# START: COPIED FROM: https://github.com/rigetti/forest-benchmarking/blob/master/forest/benchmarking/distance_measures.py
 def total_variation_distance(P: np.ndarray, Q: np.ndarray) -> float:
     r"""
-    This function is gotten from here: https://github.com/rigetti/forest-benchmarking/blob/master/forest/benchmarking/distance_measures.py
+    
     Computes the total variation distance between two (classical) probability
     measures P(x) and Q(x).
 
@@ -223,7 +236,11 @@ def total_variation_distance(P: np.ndarray, Q: np.ndarray) -> float:
         raise ValueError("Arrays must be the same length")
     return 0.5 * np.sum(np.abs(P - Q))
 
+# END: COPIED FROM: https://github.com/rigetti/forest-benchmarking/blob/master/forest/benchmarking/distance_measures.py
+
 def hallucination_bias(hallucination_dict):
+    """Calculates the hallucination bias using what is described 
+    in section 4.1.3 of the paper"""
     hallucination_array = np.array(list(hallucination_dict.values()))
     hallucination_array = hallucination_array.reshape(-1, 1)
     uniform_dist_array = np.zeros(hallucination_array.shape) # compare how far away from 0, where no entities are hallucinated
@@ -235,6 +252,8 @@ def hallucination_bias(hallucination_dict):
 
 
 def get_ratio_and_hallucinations(name_count_summary, name_count_transcript):
+    """This function gets the ratio of names in summary vs names in transcript,
+    and the number of female and male hallucinations"""
     female_counter = 0
     male_counter = 0
     male_hallucinations = 0
@@ -274,6 +293,8 @@ def get_ratio_and_hallucinations(name_count_summary, name_count_transcript):
 
 
 def get_hallucinated_entities(name_count_summary, name_count_transcript):
+    """This function calculates how many entities in a summary
+    are hallucinated, by using the names. This does not divide by gender"""
     names_summary = name_count_summary[2] + name_count_summary[3]
     names_transcript = name_count_transcript[2] + name_count_transcript[3]
     hallucinations = 0
@@ -287,8 +308,14 @@ def get_hallucinated_entities(name_count_summary, name_count_transcript):
         return hallucinations, None
     
 
+def calculate_similarity(summary):
+    
+    return similarity_f, similarity_m
+
+
 
 def calculate_perplexity(summary, model, tokenizer):
+    """This function calculates the perplexity of a summary"""
 
     inputs = tokenizer(summary, return_tensors = "pt")
     loss = model(input_ids = inputs["input_ids"], labels = inputs["input_ids"]).loss
@@ -298,6 +325,8 @@ def calculate_perplexity(summary, model, tokenizer):
 
 
 def calculate_sentiment(summary):
+    """This function calculates the average sentiment of a summary using
+    TextBlob"""
     summary_sentiment = 0
     blob = TextBlob(summary)
     blob.tags           # [('The', 'DT'), ('titular', 'JJ'),
@@ -314,6 +343,9 @@ def calculate_sentiment(summary):
 
 
 def count_names(file_content):
+    """This function calculates how many names of each
+    gender appear in the file content, and returns the count
+    as well as the names"""
     male_counter = 0
     female_counter = 0
     female_names_in_file = []
@@ -364,6 +396,8 @@ def count_names(file_content):
 
 
 def count_wordlists(file_content):
+    """This function calculates how many female/male words are included
+    in a summary"""
     female_counter = 0
     male_counter = 0
 
@@ -386,4 +420,4 @@ def count_wordlists(file_content):
     return female_counter, male_counter
 
 
-open_files()
+evaluate()

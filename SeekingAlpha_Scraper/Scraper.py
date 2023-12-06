@@ -22,32 +22,12 @@ from pathlib import Path
 import yaml
 import os
 
-# accept arguments for scraping
-# argument_parser = ArgumentParser()
-# argument_parser.add_argument('-t', '--ticker',
-#                              help='Ticker of the desired company')
-
-# args = argument_parser.parse_args()
-
-
 # load your environment variables from the secret.yaml file
 my_setup = yaml.safe_load(open('SeekingAlpha_Scraper/secret.yaml'))
 Path("../Outputs/Transcripts").mkdir(parents=True, exist_ok=True)
 
 service = Service()
 
-
-# # a new selenium browser
-# def open_browser() -> webdriver:
-#     my_options = webdriver.ChromeOptions()
-#     my_options.add_argument(f'user-data-dir=Scraper')
-#     my_options.add_argument('--enable-javascript')
-#     my_options.add_argument('--disable-blink-features=AutomationControlled')
-#     my_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-#     my_options.add_experimental_option('useAutomationExtension', False)
-#     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=my_options)
-#     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => false})")
-#     return driver
 
 def open_browser() -> webdriver:
     my_options = webdriver.ChromeOptions()
@@ -104,7 +84,7 @@ def press_and_hold(driver):
 
 
 def get_output(ticker):
-
+    """This function scrapes the data from Seeking Alpha"""
     link = f'https://seekingalpha.com/symbol/{ticker}/earnings/transcripts'
 
     browser = open_browser()

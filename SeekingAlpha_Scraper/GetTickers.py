@@ -15,8 +15,8 @@ def get_tickers():
 
 symbols = get_tickers()
 for s in symbols:
-    print(s)
     try:
+        # webscrapes for the company with symbol s
         get_output(s)
     except Exception as e:
         continue

@@ -5,7 +5,7 @@ import nltk
 nltk.download('punkt')
 
 # Specify the folder path and file pattern
-folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries'
+folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries_led_base'
 file_pattern = '*.txt'  # Example: List all .txt files
 
 # Use glob to get a list of files that match the pattern
@@ -30,7 +30,7 @@ for filename in files:
     
     sentiment[filename[:-4].split("/")[-1]] = summary_polarity/len(blob.sentences)
 
-print(sentiment)
+# print(sentiment)
 
 avg_sentiment = sum(sentiment.values())/len(sentiment)
 print(avg_sentiment)

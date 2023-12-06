@@ -20,8 +20,6 @@ files = glob.glob(os.path.join(folder_path, file_pattern))
 
 # Iterate over the files
 for filename in files:
-    # You can perform operations on each file here
-    # For example, print the file name
     with open(filename) as file:
         txt_content = file.read()
     
