@@ -43,8 +43,8 @@ generation_config = GenerationConfig(
     temperature=0.2,
     top_p=0.75,
     top_k=40,
-    # num_beams=2,
-    max_new_tokens=1,
+    num_beams=2,
+    max_new_tokens=128,
 )
 
 model.eval()
