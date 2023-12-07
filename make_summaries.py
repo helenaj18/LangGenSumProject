@@ -12,7 +12,7 @@ model = LEDForConditionalGeneration.from_pretrained("allenai/led-large-16384-arx
 tokenizer = AutoTokenizer.from_pretrained("allenai/led-large-16384-arxiv")
 
 # Specify the folder path and file pattern
-folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/txt_files'
+folder_path = 'Outputs/txt_files'
 file_pattern = '*.txt'  # Example: List all .txt files
 
 # Use glob to get a list of files that match the pattern

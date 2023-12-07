@@ -18,7 +18,7 @@ def evaluate():
     tokenizer = AutoTokenizer.from_pretrained("gpt2")
     # Specify the folder path and file pattern
     model_name = 'summaries_legal_led'
-    folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/' + model_name
+    folder_path = 'Outputs/' + model_name
     file_pattern = '*.txt'  # Example: List all .txt files
 
     files = glob.glob(os.path.join(folder_path, file_pattern))

@@ -1,7 +1,7 @@
 
-legal_perplexity_file_name = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/perplexity/perplexity_legal_led.txt'
+legal_perplexity_file_name = 'Outputs/perplexity/perplexity_legal_led.txt'
 
-perplexity_file_name = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/perplexity/perplexity.txt'
+perplexity_file_name = 'Outputs/perplexity/perplexity.txt'
 
 filenames = [legal_perplexity_file_name, perplexity_file_name]
 

@@ -27,7 +27,7 @@ def calculate_similarity(corpus):
         # unique_pairs.add(tuple(sorted((a,b))))
         similarity_score[counter] = cosine_sim(a, b)
         counter += 1
-        
+
     avg_similarity = sum(similarity_score.values())/len(similarity_score)
     return avg_similarity
 
@@ -37,7 +37,7 @@ def calculate_representation_bias(datasets, gender_str):
     mentioned in section 4.1.4 of the paper"""
     similarity = {}
     for dataset in datasets:
-        folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/' + dataset
+        folder_path = 'Outputs/' + dataset
         file_pattern = '*.txt'  # Example: List all .txt files
 
         files = glob.glob(os.path.join(folder_path, file_pattern))

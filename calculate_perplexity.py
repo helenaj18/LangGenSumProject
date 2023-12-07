@@ -8,15 +8,15 @@ def calculate_perplexity():
     tokenizer = AutoTokenizer.from_pretrained("gpt2")
 
     # Specify the folder path and file pattern
-    folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries_led_base'
-    # folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries_legal_led'
+    folder_path = 'Outputs/summaries_led_base'
+    # folder_path = 'Outputs/summaries_legal_led'
     file_pattern = '*.txt'  # Example: List all .txt files
 
     # Use glob to get a list of files that match the pattern
     files = glob.glob(os.path.join(folder_path, file_pattern))
-    perplexity_file_name = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/perplexity/perplexity.txt'
+    perplexity_file_name = 'Outputs/perplexity/perplexity.txt'
 
-    # perplexity_file_name = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/perplexity/perplexity_legal_led.txt'
+    # perplexity_file_name = 'Outputs/perplexity/perplexity_legal_led.txt'
 
 
     for filename in files:

@@ -3,7 +3,7 @@ import os
 import random
 
 # Specify the folder path and file pattern
-folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries_led_base'
+folder_path = 'Outputs/summaries_led_base'
 file_pattern = '*.txt'  # Example: List all .txt files
 
 # Use glob to get a list of files that match the pattern
