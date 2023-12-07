@@ -1,2 +1,4 @@
 textblob
 nltk
+spacy
+scikit-learn

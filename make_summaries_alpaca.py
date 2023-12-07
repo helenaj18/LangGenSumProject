@@ -54,26 +54,31 @@ files = glob.glob(os.path.join(folder_path, file_pattern))
 
 
 for filename in files:
-    ### THIS CODE IS TAKEN FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
-    instruction = "Summarize the text in the input."
-
-    with open(filename) as file:
-        input_ctxt = file.read()
-
-    prompt = generate_prompt(instruction, input_ctxt)
-    input_ids = tokenizer(prompt, return_tensors="pt").input_ids
-    input_ids = input_ids.to(model.device)
-
-    with torch.no_grad():
-        outputs = model.generate(
-            input_ids=input_ids,
-            generation_config=generation_config,
-            return_dict_in_generate=True,
-            output_scores=True,
-        )
-
-    response = tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
-    ### END OF CODE SEGMENT FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
+    summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
     new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_alpaca_lora/")+'.txt'
-    with open(new_summary_file_name, "w") as f:
-        f.write(response)
+    if os.path.exists(summary_file_name) and not os.path.exists(new_summary_file_name):
+        try: 
+            ### THIS CODE IS TAKEN FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
+            instruction = "Summarize the text in the input."
+
+            with open(filename) as file:
+                input_ctxt = file.read()
+
+            prompt = generate_prompt(instruction, input_ctxt)
+            input_ids = tokenizer(prompt, return_tensors="pt").input_ids
+            input_ids = input_ids.to(model.device)
+
+            with torch.no_grad():
+                outputs = model.generate(
+                    input_ids=input_ids,
+                    generation_config=generation_config,
+                    return_dict_in_generate=True,
+                    output_scores=True,
+                )
+
+            response = tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
+            ### END OF CODE SEGMENT FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
+            with open(new_summary_file_name, "w") as f:
+                f.write(response)
+        except Exception as e:
+            print("Could not summarize filename:\n " + filename[20:] + "because of exception: " + str(e))

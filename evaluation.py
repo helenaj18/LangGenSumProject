@@ -6,17 +6,19 @@ from textblob import TextBlob
 import nltk
 nltk.download('punkt') # python -m textblob.download_corpora
 import numpy as np
-import spacy
+# import spacy
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from itertools import combinations
 
 
 def evaluate():
     model = AutoModelForCausalLM.from_pretrained("gpt2")
     tokenizer = AutoTokenizer.from_pretrained("gpt2")
     # Specify the folder path and file pattern
-    folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/summaries_longt5_CG'
+    model_name = 'summaries_legal_led'
+    folder_path = '/Users/helenajonsdottir/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Columbia/Courses/Language generation and summarization/Code/Outputs/' + model_name
     file_pattern = '*.txt'  # Example: List all .txt files
 
     files = glob.glob(os.path.join(folder_path, file_pattern))
@@ -50,11 +52,14 @@ def evaluate():
     female_hallucinations_dict = {}
     total_hallucinations = 0
     hallucinations_ratio_dict = {}
+
+    summaries = []
     # Iterate over the files
     for filename in files:
-        transcript_filename = filename[:-4].replace("/summaries_led_base/", "/txt_files/") + ".txt"
+        transcript_filename = filename[:-4].replace("/" + model_name + "/", "/txt_files/") + ".txt"
         with open(filename, "r") as file:
             summary = file.read()
+            summaries.append(summary)
         
         with open(transcript_filename, "r") as transcript_file:
             transcript = transcript_file.read()
@@ -70,7 +75,11 @@ def evaluate():
 
         (male_hallucinations, female_hallucinations), ret = get_ratio_and_hallucinations(name_count_summary, name_count_transcript)
         if ret != None:
-            p_male[name], p_female[name] = ret
+            a, b = ret
+            if a != None:
+                p_male[name] = a
+            if b != None:
+                p_female[name] = b
 
         total_hallucinations += hallucinations
         
@@ -188,16 +197,20 @@ def evaluate():
     avg_ratio_halluinations = sum(hallucinations_ratio_dict.values())/len(hallucinations_ratio_dict)
 
     print("Avg ratio hallucinations: ", avg_ratio_halluinations)
+
+
+    ### SIMILIARTY
+    calculate_similarity(summaries)
     
 
 def calculate_inclusion_bias(avg_p_male, avg_p_female):
     """Calculates the inclusion bias like it's described in 
     section 4.1.2 of the paper"""
+
     avg_male_ratio = (avg_p_male/(1-avg_p_male))
     avg_female_ratio = (avg_p_female/(1-avg_p_female))
 
     avg_max_male = avg_male_ratio/avg_female_ratio-1
-
     avg_max_female = avg_female_ratio/avg_male_ratio - 1
 
     final_inclusion_score = max(avg_max_male, avg_max_female)
@@ -205,6 +218,7 @@ def calculate_inclusion_bias(avg_p_male, avg_p_female):
     print("Female inclusion score: ", avg_max_female)
     print("Male inclusion score: ", avg_max_male)
     print("Final inclusion score: ", final_inclusion_score)
+
 
 
 
@@ -284,9 +298,13 @@ def get_ratio_and_hallucinations(name_count_summary, name_count_transcript):
         elif female_name_count_summary > female_counter:
             female_hallucinations += female_name_count_summary - female_counter
 
-    if male_name_count_transcript > 0 and female_name_count_transcript > 0:
-
-        return (male_hallucinations, female_hallucinations), (male_name_count_summary/male_name_count_transcript, female_name_count_summary/female_name_count_transcript)
+    if male_name_count_transcript > 0:
+        if female_name_count_transcript > 0:
+            return (male_hallucinations, female_hallucinations), (male_name_count_summary/male_name_count_transcript, female_name_count_summary/female_name_count_transcript)
+        else:
+            return (male_hallucinations, female_hallucinations), (male_name_count_summary/male_name_count_transcript, None)
+    elif female_name_count_transcript > 0:
+        return (male_hallucinations, female_hallucinations), (None, female_name_count_summary/female_name_count_transcript)
     else:
         return (male_hallucinations, female_hallucinations), None
 
@@ -295,7 +313,7 @@ def get_ratio_and_hallucinations(name_count_summary, name_count_transcript):
 def get_hallucinated_entities(name_count_summary, name_count_transcript):
     """This function calculates how many entities in a summary
     are hallucinated, by using the names. This does not divide by gender"""
-    names_summary = name_count_summary[2] + name_count_summary[3]
+    names_summary = name_count_summary[2] + name_count_summary[3] # sums up female and male names in the summary
     names_transcript = name_count_transcript[2] + name_count_transcript[3]
     hallucinations = 0
     for name in names_summary:
@@ -308,11 +326,28 @@ def get_hallucinated_entities(name_count_summary, name_count_transcript):
         return hallucinations, None
     
 
-def calculate_similarity(summary):
-    
-    return similarity_f, similarity_m
+def calculate_similarity(corpus):
+    similarity_score = {}
+    vectorizer = CountVectorizer()
+    # Fit vectorizer to corpus
+    bow = vectorizer.fit_transform(corpus)
 
+    unique_pairs = set()
 
+    for pair in combinations(bow, 2):
+        unique_pairs.add(tuple(sorted(pair)))
+
+    for pair in unique_pairs:
+        a,b = pair
+        similarity_score[pair] = cosine_sim(a.toarray().squeeze(), b.toarray().squeeze())
+
+    avg_similarity = sum(similarity_score)/len(similarity_score)
+    return avg_similarity
+
+### START: https://www.kaggle.com/code/samuelcortinhas/nlp3-bag-of-words-and-similarity/notebook
+def cosine_sim(a,b):
+    return np.dot(a,b)/(np.linalg.norm(a)*np.linalg.norm(b))
+### END: https://www.kaggle.com/code/samuelcortinhas/nlp3-bag-of-words-and-similarity/notebook
 
 def calculate_perplexity(summary, model, tokenizer):
     """This function calculates the perplexity of a summary"""
