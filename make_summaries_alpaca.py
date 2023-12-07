@@ -33,6 +33,7 @@ model = LlamaForCausalLM.from_pretrained(
     device_map="auto",
 )
 generation_config = GenerationConfig(
+    do_sample = True,
     temperature=0.2,
     top_p=0.75,
     top_k=40,
