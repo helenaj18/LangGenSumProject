@@ -32,13 +32,19 @@ model = LlamaForCausalLM.from_pretrained(
     torch_dtype=torch.float16,
     device_map="auto",
 )
+
+# early stopping
+# decrease max new tokens
+# stop the beam search
+# Error:
+# CUDA out of memory. Tried to allocate 22.21 GiB. GPU 0 has a total capacty of 14.58 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 13.49 GiB memory in use. Of the allocated memory 9.42 GiB is allocated by PyTorch, and 3.37 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
 generation_config = GenerationConfig(
     do_sample = True,
     temperature=0.2,
     top_p=0.75,
     top_k=40,
-    num_beams=4,
-    max_new_tokens=2048,
+    num_beams=2,
+    max_new_tokens=128,
 )
 
 model.eval()
