@@ -59,7 +59,7 @@ file_pattern = '*.txt'  # Example: List all .txt files
 
 # Use glob to get a list of files that match the pattern
 files = glob.glob(os.path.join(folder_path, file_pattern))
-
+print(files)
 print("before filename in files")
 try:
     for filename in files:
