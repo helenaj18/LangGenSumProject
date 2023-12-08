@@ -62,8 +62,10 @@ files = glob.glob(os.path.join(folder_path, file_pattern))
 
 print("before filename in files")
 for filename in files:
+    print("inside filename in files")
     summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
-    new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_alpaca_lora/").replace("Outputs", "AlpacaOutputs")+'.txt'
+    new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_alpaca_lora/")+'.txt'
+    new_summary_file_name = new_summary_file_name.replace("Outputs", "AlpacaOutputs")
     print("before if os path")
     if os.path.exists(summary_file_name) and not os.path.exists(new_summary_file_name):
         try: 
