@@ -61,40 +61,43 @@ file_pattern = '*.txt'  # Example: List all .txt files
 files = glob.glob(os.path.join(folder_path, file_pattern))
 
 print("before filename in files")
-for filename in files:
-    print("inside filename in files")
-    summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
-    new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_alpaca_lora/")+'.txt'
-    new_summary_file_name = new_summary_file_name.replace("Outputs", "AlpacaOutputs")
-    print("before if os path")
-    if os.path.exists(summary_file_name) and not os.path.exists(new_summary_file_name):
-        try: 
-            ### THIS CODE IS TAKEN FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
-            instruction = "Summarize the text in the input."
+try:
+    for filename in files:
+        print("inside filename in files")
+        summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
+        new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_alpaca_lora/")+'.txt'
+        new_summary_file_name = new_summary_file_name.replace("Outputs", "AlpacaOutputs")
+        print("before if os path")
+        if os.path.exists(summary_file_name) and not os.path.exists(new_summary_file_name):
+            try: 
+                ### THIS CODE IS TAKEN FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
+                instruction = "Summarize the text in the input."
 
-            with open(filename) as file:
-                input_ctxt = file.read()
-            
-            print("Opened input file")
+                with open(filename) as file:
+                    input_ctxt = file.read()
+                
+                print("Opened input file")
 
-            prompt = generate_prompt(instruction, input_ctxt)
-            print("Generated prompt")
-            input_ids = tokenizer(prompt, return_tensors="pt").input_ids
-            print("Ran tokenizer")
-            input_ids = input_ids.to(model.device)
-            print("before torch.nograd")
+                prompt = generate_prompt(instruction, input_ctxt)
+                print("Generated prompt")
+                input_ids = tokenizer(prompt, return_tensors="pt").input_ids
+                print("Ran tokenizer")
+                input_ids = input_ids.to(model.device)
+                print("before torch.nograd")
 
-            with torch.no_grad():
-                outputs = model.generate(
-                    input_ids=input_ids,
-                    generation_config=generation_config,
-                    return_dict_in_generate=True,
-                    output_scores=True,
-                )
-            print("after torch.no-grad")
-            response = tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
-            ### END OF CODE SEGMENT FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
-            with open(new_summary_file_name, "w") as f:
-                f.write(response)
-        except Exception as e:
-            print("Could not summarize filename:\n " + filename[20:] + "because of exception: " + str(e))
+                with torch.no_grad():
+                    outputs = model.generate(
+                        input_ids=input_ids,
+                        generation_config=generation_config,
+                        return_dict_in_generate=True,
+                        output_scores=True,
+                    )
+                print("after torch.no-grad")
+                response = tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
+                ### END OF CODE SEGMENT FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
+                with open(new_summary_file_name, "w") as f:
+                    f.write(response)
+            except Exception as e:
+                print("Could not summarize filename:\n " + filename[20:] + "because of exception: " + str(e))
+except Exception as e:
+    print("Exception: ", e)
