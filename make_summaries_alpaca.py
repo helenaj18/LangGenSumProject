@@ -8,22 +8,22 @@ def generate_prompt(instruction: str, input_ctxt: str = None) -> str:
     if input_ctxt:
         return f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
-### Instruction:
-{instruction}
+        ### Instruction:
+        {instruction}
 
-### Input:
-{input_ctxt}
+        ### Input:
+        {input_ctxt}
 
-### Response:"""
+        ### Response:"""
     else:
         return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
-### Instruction:
-{instruction}
+        ### Instruction:
+        {instruction}
 
-### Response:"""
+        ### Response:"""
 
-
+print("Inside file")
 
 tokenizer = LlamaTokenizer.from_pretrained("chainyo/alpaca-lora-7b")
 model = LlamaForCausalLM.from_pretrained(
@@ -38,6 +38,7 @@ model = LlamaForCausalLM.from_pretrained(
 # stop the beam search
 # Error:
 # CUDA out of memory. Tried to allocate 22.21 GiB. GPU 0 has a total capacty of 14.58 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 13.49 GiB memory in use. Of the allocated memory 9.42 GiB is allocated by PyTorch, and 3.37 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+print("Before generation config")
 generation_config = GenerationConfig(
     # do_sample = True,
     # temperature=0.2,
@@ -59,10 +60,11 @@ file_pattern = '*.txt'  # Example: List all .txt files
 # Use glob to get a list of files that match the pattern
 files = glob.glob(os.path.join(folder_path, file_pattern))
 
-
+print("before filename in files")
 for filename in files:
     summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
     new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_alpaca_lora/").replace("Outputs", "AlpacaOutputs")+'.txt'
+    print("before if os path")
     if os.path.exists(summary_file_name) and not os.path.exists(new_summary_file_name):
         try: 
             ### THIS CODE IS TAKEN FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
