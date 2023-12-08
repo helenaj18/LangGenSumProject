@@ -70,10 +70,15 @@ for filename in files:
 
             with open(filename) as file:
                 input_ctxt = file.read()
+            
+            print("Opened input file")
 
             prompt = generate_prompt(instruction, input_ctxt)
+            print("Generated prompt")
             input_ids = tokenizer(prompt, return_tensors="pt").input_ids
+            print("Ran tokenizer")
             input_ids = input_ids.to(model.device)
+            print("before torch.nograd")
 
             with torch.no_grad():
                 outputs = model.generate(
@@ -82,7 +87,7 @@ for filename in files:
                     return_dict_in_generate=True,
                     output_scores=True,
                 )
-
+            print("after torch.no-grad")
             response = tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
             ### END OF CODE SEGMENT FROM HERE: https://huggingface.co/chainyo/alpaca-lora-7b
             with open(new_summary_file_name, "w") as f:
