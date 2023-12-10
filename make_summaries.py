@@ -3,7 +3,7 @@ import os
 import torch
 from transformers import AutoTokenizer, LEDForConditionalGeneration, LEDTokenizer
 
-# Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+# START: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
 
 
 model = LEDForConditionalGeneration.from_pretrained("allenai/led-large-16384-arxiv")
@@ -38,3 +38,6 @@ for filename in files:
                 print("Summarized: ", new_summary_file_name)
         except Exception as e:
             print("Could not summarize filename:\n " + filename[20:] + "because of exception: " + str(e))
+
+
+# END: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
