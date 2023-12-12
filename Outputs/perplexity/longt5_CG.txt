@@ -1,0 +1,202 @@
+Outputs/summaries_longt5_CG/ADM_transcripts_Archer-Daniels-Midland Company (ADM) CEO Juan Luciano on Q3 2021 Results - Earnings Call Transcript.txt;; 23.83672523498535
+Outputs/summaries_longt5_CG/AAL_transcripts_American Airlines Group, Inc. (AAL) Q4 2022 Earnings Call Transcript.txt;; 18.57487678527832
+Outputs/summaries_longt5_CG/ACNT_transcripts_Synalloy Corp (SYNL) CEO Christopher Hutter On Q3 2021 Results - Earnings Call Transcript.txt;; 7.3846821784973145
+Outputs/summaries_longt5_CG/ABCL_transcripts_AbCellera Biologics' (ABCL) CEO Carl Hansen on Q4 2020 Results - Earnings Call Transcript.txt;; 25.273649215698242
+Outputs/summaries_longt5_CG/ACOR_transcripts_Acorda Therapeutics, Inc. (ACOR) CEO Ron Cohen on Q2 2021 Results - Earnings Call Transcript.txt;; 38.64236068725586
+Outputs/summaries_longt5_CG/ACVA_transcripts_ACV Auctions Inc. (ACVA) CEO George Chamoun on Q4 2021 Results - Earnings Call Transcript.txt;; 47.24445343017578
+Outputs/summaries_longt5_CG/ACCO_transcripts_ACCO Brands Corporation (ACCO) CEO Boris Elisman on Q1 2022 Results - Earnings Call Transcript.txt;; 53.02688217163086
+Outputs/summaries_longt5_CG/AAN_transcripts_The Aaron's Company, Inc. (AAN) CEO Douglas Lindsay on Q2 2021 Results - Earnings Call Transcript.txt;; 34.242530822753906
+Outputs/summaries_longt5_CG/ACOR_transcripts_Acorda Therapeutics' (ACOR) CEO Ron Cohen on Q2 2018 Results - Earnings Call Transcript.txt;; 27.801637649536133
+Outputs/summaries_longt5_CG/AAP_transcripts_Advance Auto Parts, Inc. (AAP) Q1 2023 Earnings Call Transcript.txt;; 29.29605484008789
+Outputs/summaries_longt5_CG/ACIC_transcripts_United Insurance Holdings Corp. (UIHC) CEO Robert Peed on Q2 2020 Results - Earnings Call Transcript.txt;; 29.582639694213867
+Outputs/summaries_longt5_CG/ACHV_transcripts_Achieve Life Sciences, Inc. (ACHV) CEO Rick Stewart on Q3 2019 Results - Earnings Call Transcript.txt;; 25.723140716552734
+Outputs/summaries_longt5_CG/ACRX_transcripts_AcelRx Pharmaceuticals, Inc.'s (ACRX) CEO Vince Angotti on Q4 2019 Results - Earnings Call Transcript.txt;; 30.429758071899414
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia Research Corporation (ACTG) CEO Clifford Press on Q3 2021 Results - Earnings Call Transcript.txt;; 83.5828628540039
+Outputs/summaries_longt5_CG/ABBV_transcripts_AbbVie Inc. (ABBV) Presents at Bernstein's 37th Annual Strategic Decisions Conference (Transcript).txt;; 6.937353610992432
+Outputs/summaries_longt5_CG/ACRS_transcripts_Aclaris Therapeutics, Inc. (ACRS) CEO Neal Walker on Q4 2019 Results - Earnings Call Transcript.txt;; 66.07655334472656
+Outputs/summaries_longt5_CG/AAN_transcripts_The Aaron's Company, Inc. (AAN) Q2 2023 Earnings Call Transcript.txt;; 42.28229904174805
+Outputs/summaries_longt5_CG/ADC_transcripts_Agree Realty Corporation's (ADC) CEO Joey Agree on Q4 2018 Results - Earnings Call Transcript.txt;; 99.0518569946289
+Outputs/summaries_longt5_CG/ACDC_transcripts_U.S. Well Services Inc. (USWS) CEO Joel Broussard on Q2 2021 Results - Earnings Call Transcript.txt;; 12.311397552490234
+Outputs/summaries_longt5_CG/ACCO_transcripts_ACCO Brands Corporation (ACCO) CEO Boris Elisman On Q4 2021 Results - Earnings Call Transcript.txt;; 59.610145568847656
+Outputs/summaries_longt5_CG/ACDC_transcripts_U.S. Well Services, Inc. (USWS) CEO Joel Broussard on Q3 2019 Results - Earnings Call Transcript.txt;; 43.92487335205078
+Outputs/summaries_longt5_CG/AAL_transcripts_American Airlines Group, Inc. (AAL) CEO Doug Parker on Q1 2021 Results - Earnings Call Transcript.txt;; 18.35288429260254
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia Research's (ACTG) Management on Q2 2017 Results - Earnings Call Transcript.txt;; 23.792295455932617
+Outputs/summaries_longt5_CG/AB_transcripts_AllianceBernstein Holding L.P. (AB) CEO Seth Bernstein on Q3 2020 Results - Earnings Call Transcript.txt;; 24.794227600097656
+Outputs/summaries_longt5_CG/ADMA_transcripts_ADMA Biologics, Inc. (ADMA) CEO Adam Grossman on Q4 2021 Results - Earnings Call Transcript.txt;; 37.43354415893555
+Outputs/summaries_longt5_CG/ABBV_transcripts_AbbVie Inc. (ABBV) Q1 2023 Earnings Call Transcript.txt;; 32.708309173583984
+Outputs/summaries_longt5_CG/ACNT_transcripts_Synalloy Corporation (SYNL) CEO Craig Bram on Q3 2018 Results - Earnings Call Transcript.txt;; 33.73141098022461
+Outputs/summaries_longt5_CG/ACB_transcripts_Aurora Cannabis Inc. (ACB) CEO Miguel Martin on Q3 2022 Results - Earnings Call Transcript.txt;; 23.620248794555664
+Outputs/summaries_longt5_CG/ADBE_transcripts_Adobe, Inc. (ADBE) CEO Shantanu Narayen on Q2 2021 Results - Earnings Call Transcript.txt;; 20.364553451538086
+Outputs/summaries_longt5_CG/AAP_transcripts_Advance Auto Parts (AAP) Q4 2014 Results - Earnings Call Transcript.txt;; 44.94655227661133
+Outputs/summaries_longt5_CG/ADC_transcripts_Agree Realty Corporation (ADC) Q4 2022 Earnings Call Transcript.txt;; 8.350517272949219
+Outputs/summaries_longt5_CG/ABG_transcripts_Asbury Automotive Group, Inc. (ABG) Q2 2023 Earnings Call Transcript.txt;; 27.303617477416992
+NoneOutputs/summaries_longt5_CG/ACM_transcripts_AECOM (ACM) CEO Troy Rudd on Q2 2021 Results - Earnings Call Transcript.txt;; 21.435300827026367
+Outputs/summaries_longt5_CG/ACT_transcripts_Enact Holdings, Inc. (ACT) Q1 2023 Earnings Call Transcript.txt;; 33.622039794921875
+Outputs/summaries_longt5_CG/ABEV_transcripts_Ambev S.A. (ABEV) CEO Bernardo Paiva on Q1 2019 Results - Earnings Call Transcript.txt;; 34.41334915161133
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple Inc. (AAPL) CEO Tim Cook on Q3 2021 Results - Earnings Call Transcript.txt;; 28.727773666381836
+Outputs/summaries_longt5_CG/ADCT_transcripts_ADC Therapeutics SA (ADCT) Q1 2023 Earnings Call Transcript.txt;; 68.20038604736328
+Outputs/summaries_longt5_CG/ABUS_transcripts_Arbutus Biopharma Corporation (ABUS) CEO William Collier on Q2 2019 Results - Earnings Call Transcript.txt;; 39.30339431762695
+Outputs/summaries_longt5_CG/ADAP_transcripts_Adaptimmune Therapeutics plc (ADAP) CEO Adrian Rawcliffe on Q2 2022 Results - Earnings Call Transcript.txt;; 73.21891021728516
+Outputs/summaries_longt5_CG/ABT_transcripts_Abbott Laboratories (ABT) CEO Robert Ford Presents at 39th Annual J.P. Morgan Healthcare Conference (Transcript).txt;; 35.76694107055664
+Outputs/summaries_longt5_CG/ACDCW_transcripts_ProFrac Holding Corp. (ACDC) Q3 2022 Earnings Call Transcript.txt;; 84.08258056640625
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia Research Corporation (ACTG) Q4 2018 Results - Earnings Call Transcript.txt;; 51.0037956237793
+Outputs/summaries_longt5_CG/A_transcripts_Agilent Technologies, Inc. (A) CEO Mike McMullen on Q1 2020 Results - Earnings Call Transcript.txt;; 54.139381408691406
+Outputs/summaries_longt5_CG/A_transcripts_Agilent Technologies' (A) CEO Mike McMullen on Q2 2020 Results - Earnings Call Transcript.txt;; 44.4857177734375
+Outputs/summaries_longt5_CG/ACRX_transcripts_AcelRx Pharmaceuticals' (ACRX) CEO Howie Rosen on Q4 2015 Results - Earnings Call Transcript.txt;; 58.39908981323242
+Outputs/summaries_longt5_CG/ABEV_transcripts_AmBev's (ABEV) CEO Bernardo Paiva on Q4 2016 Results - Earnings Call Transcript.txt;; 25.666553497314453
+Outputs/summaries_longt5_CG/ACRS_transcripts_Aclaris Therapeutics (ACRS) CEO Neal Walker on Q3 2018 Results - Earnings Call Transcript.txt;; 31.589200973510742
+Outputs/summaries_longt5_CG/ADD_transcripts_China Advanced Construction Materials Group's (CADC) CEO Howard Yang on Q1 2015 Results - Earnings Call Transcript.txt;; 41.11842727661133
+Outputs/summaries_longt5_CG/ACIW_transcripts_ACI Worldwide, Inc. (ACIW) CEO Odilon Almeida on Q4 2021 Results - Earnings Call Transcript.txt;; 42.4275016784668
+Outputs/summaries_longt5_CG/AADI_transcripts_Aadi Bioscience, Inc. (AADI) Q4 2022 Earnings Call Transcript.txt;; 47.87590026855469
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple, Inc. (AAPL) CEO Tim Cook on Q3 2022 Results - Earnings Call Transcript.txt;; 9.10915756225586
+Outputs/summaries_longt5_CG/ACHV_transcripts_Achieve Life Sciences, Inc. (ACHV) Q1 2023 Earnings Call Transcript.txt;; 35.939327239990234
+Outputs/summaries_longt5_CG/ABBV_transcripts_AbbVie Inc. (ABBV) Morgan Stanley 21st Annual Global Healthcare Brokers Conference 2023 (Transcript).txt;; 82.34331512451172
+Outputs/summaries_longt5_CG/ACAD_transcripts_ACADIA Pharmaceuticals, Inc. (ACAD) Q3 2022 Earnings Call Transcript.txt;; 17.82644271850586
+Outputs/summaries_longt5_CG/ACOR_transcripts_Acorda Therapeutics' (ACOR) CEO Ron Cohen on Q4 2017 Results - Earnings Call Transcript.txt;; 17.620771408081055
+Outputs/summaries_longt5_CG/AAON_transcripts_AAON's (AAON) CEO Norman Asbjornson on Q2 2018 Results - Earnings Call Transcript.txt;; 13.960566520690918
+Outputs/summaries_longt5_CG/ABCM_transcripts_Abcam (ABCM) CEO, Alan Hirzel on Q4 2021 Results - Earnings Call Transcript.txt;; 37.66460418701172
+Outputs/summaries_longt5_CG/ABUS_transcripts_Arbutus Biopharma Corp (ABUS) CEO William Collier on Q1 2022 Results - Earnings Call Transcript.txt;; 46.68398666381836
+Outputs/summaries_longt5_CG/ADP_transcripts_Automatic Data Processing, Inc. (ADP) Q3 2023 Earnings Call Transcript.txt;; 58.98788070678711
+Outputs/summaries_longt5_CG/ACGLO_transcripts_Arch Capital Group Ltd (ACGL) Q2 2023 Earnings Call Transcript.txt;; 10.811052322387695
+Outputs/summaries_longt5_CG/ACRE_transcripts_Ares Commercial Real Estate Corporation (ACRE) CEO Bryan Donohoe on Q4 2020 Results - Earnings Call Transcript.txt;; 31.06990623474121
+Outputs/summaries_longt5_CG/ABUS_transcripts_Arbutus Biopharma Corporation (ABUS) Q2 2023 Earnings Call Transcript.txt;; 43.02576446533203
+Outputs/summaries_longt5_CG/AACG_transcripts_ATA, Inc. (ATAI) CEO Kevin Ma on Q1 2019 Results - Earnings Call Transcript.txt;; 30.14910888671875
+Outputs/summaries_longt5_CG/ACHR_transcripts_Archer Aviation Inc. (ACHR) Q1 2023 Earnings Call Transcript.txt;; 14.677976608276367
+Outputs/summaries_longt5_CG/AAT_transcripts_American Assets Trust's (AAT) CEO Ernest Rady on Q2 2017 Results - Earnings Call Transcript.txt;; 26.160734176635742
+Outputs/summaries_longt5_CG/ADI_transcripts_Analog Devices, Inc (ADI) Bernstein's 39th Annual Strategic Decisions Conference 2023 (Transcript).txt;; 8.869954109191895
+Outputs/summaries_longt5_CG/ACA_transcripts_Arcosa (ACA) CEO, Antonio Carillo on Q4 2021 Results - Earnings Call Transcript.txt;; 29.12302589416504
+Outputs/summaries_longt5_CG/ACHV_transcripts_OncoGenex Pharmaceuticals Management Discusses Q1 2014 Results - Earnings Call Transcript.txt;; 76.60765075683594
+Outputs/summaries_longt5_CG/ACHC_transcripts_Acadia Healthcare (ACHC) Q4 2016 Results - Earnings Call Transcript.txt;; 17.09857749938965
+Outputs/summaries_longt5_CG/ABEO_transcripts_Abeona Therapeutics' (ABEO) CEO Timothy Miller on Q4 2016 Results - Earnings Call Transcript.txt;; 76.68125915527344
+Outputs/summaries_longt5_CG/ACHV_transcripts_Achieve Life Sciences, Inc. (ACHV) CEO Richard Stewart on Q2 2020 Results - Earnings Call Transcript.txt;; 35.10993194580078
+Outputs/summaries_longt5_CG/ACMR_transcripts_ACM Research, Inc. (ACMR) CEO David Wang on Q2 2022 Results - Earnings Call Transcript.txt;; 43.706844329833984
+Outputs/summaries_longt5_CG/ADM_transcripts_Archer-Daniels-Midland Company (ADM) Management Presents at Bank of America 2021 Global Agriculture & Materials Conference (Transcript).txt;; 16.970762252807617
+Outputs/summaries_longt5_CG/ABUS_transcripts_Arbutus Biopharma Corporation (ABUS) CEO Bill Collier on Q4 2020 Results - Earnings Call Transcript.txt;; 12.407173156738281
+Outputs/summaries_longt5_CG/ACHC_transcripts_Acadia Healthcare Company, Inc. (ACHC) CEO Christopher H. Hunter on Q1 2022 Results - Earnings Call Transcript.txt;; 28.62175941467285
+Outputs/summaries_longt5_CG/ABEV_transcripts_Ambev SA. (ABEV) CEO Jean Jereissati on Q1 2021 Results - Earnings Call Transcript.txt;; 8.141666412353516
+Outputs/summaries_longt5_CG/A_transcripts_Agilent Technologies, Inc. (A) Q4 2022 Earnings Call Transcript.txt;; 17.198970794677734
+Outputs/summaries_longt5_CG/AACG_transcripts_ATA Creativity Global (AACG) Q4 2022 Earnings Call Transcript.txt;; 26.08271026611328
+Outputs/summaries_longt5_CG/AACG_transcripts_ATA Creativity Global (AACG) CEO Kevin Ma on Q3 2020 Results - Earnings Call Transcript.txt;; 25.749052047729492
+Outputs/summaries_longt5_CG/AAP_transcripts_Advance Auto Parts, Inc. (AAP) CEO Tom Greco on Q2 2019 Results - Earnings Call Transcript.txt;; 9.536258697509766
+Outputs/summaries_longt5_CG/AAL_transcripts_American Airlines Group Inc. (AAL) Q2 2023 Earnings Call Transcript.txt;; 28.735048294067383
+Outputs/summaries_longt5_CG/AAT_transcripts_American Assets Trust, Inc. (AAT) Q3 2022 Earnings Call Transcript.txt;; 72.9859848022461
+Outputs/summaries_longt5_CG/AADI_transcripts_Aadi Bioscience, Inc. (AADI) CEO Neil Desai on Q1 2022 Results - Earnings Call Transcript.txt;; 66.55331420898438
+Outputs/summaries_longt5_CG/ACOR_transcripts_Acorda Therapeutics, Inc. (ACOR) Q2 2023 Earnings Call Transcript.txt;; 35.98326110839844
+Outputs/summaries_longt5_CG/ACHV_transcripts_OncoGenex Pharmaceuticals' (OGXI) CEO Scott Cormack on Q3 2015 Results - Earnings Call Transcript.txt;; 18.50423812866211
+Outputs/summaries_longt5_CG/ACEL_transcripts_Accel Entertainment, Inc. (ACEL) Q4 2022 Earnings Call Transcript.txt;; 16.80672264099121
+Outputs/summaries_longt5_CG/ACRX_transcripts_AcelRx Pharmaceuticals' (ACRX) CEO Howie Rosen on Q1 2016 Results - Earnings Call Transcript.txt;; 19.66595458984375
+Outputs/summaries_longt5_CG/AACG_transcripts_ATA Creativity Global (AACG) Management on Q4 2020 Results - Earnings Call Transcript.txt;; 20.280296325683594
+Outputs/summaries_longt5_CG/ACIW_transcripts_ACI Worldwide, Inc. (ACIW) CEO Odilon Almeida on Q1 2022 Results - Earnings Call Transcript.txt;; 46.8759880065918
+Outputs/summaries_longt5_CG/AAP_transcripts_Advance Auto Parts, Inc. (AAP) CEO Tom Greco on Q1 2020 Results - Earnings Call Transcript.txt;; 9.615365982055664
+Outputs/summaries_longt5_CG/ABCL_transcripts_AbCellera Biologics Inc. (ABCL) CEO Carl Hansen on Q1 2021 Results - Earnings Call Transcript.txt;; 33.89905548095703
+Outputs/summaries_longt5_CG/ABBV_transcripts_AbbVie (ABBV) CEO Rick Gonzalez on Q1 2021 Results - Earnings Call Transcript.txt;; 12.671088218688965
+Outputs/summaries_longt5_CG/AAP_transcripts_Advance Auto Parts, Inc. (AAP) CEO Tom Greco on Q4 2020 Results - Earnings Call Transcript.txt;; 13.209779739379883
+Outputs/summaries_longt5_CG/AAP_transcripts_Advance Auto Parts, Inc. (AAP) CEO Tom Greco on Q3 2020 Results - Quick Version Earnings Call Transcript.txt;; 29.389463424682617
+Outputs/summaries_longt5_CG/ACRX_transcripts_AcelRx Pharmaceuticals' (ACRX) CEO Howie Rosen on Q4 2016 Results - Earnings Call Transcript.txt;; 10.367815017700195
+Outputs/summaries_longt5_CG/ACU_transcripts_Acme United's (ACU) CEO Walter Johnsen on Q1 2017 Results - Earnings Call Transcript.txt;; 34.7936897277832
+Outputs/summaries_longt5_CG/ADP_transcripts_Automatic Data Processing (ADP) Presents at Barclays Conference Fireside Chat.txt;; 25.27581787109375
+Outputs/summaries_longt5_CG/ACET_transcripts_Aceto Management Discusses Q4 2013 Results - Earnings Call Transcript.txt;; 29.9885311126709
+Outputs/summaries_longt5_CG/ACR_transcripts_Resource Capital's (RSO) CEO Jonathan Cohen on Q3 2015 Results - Earnings Call Transcript.txt;; 17.885000228881836
+Outputs/summaries_longt5_CG/ADD_transcripts_China Advanced Construction Materials Group's CEO Discusses F2Q 2014 Results - Earnings Call Transcript.txt;; 11.005094528198242
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia Research Corporation's (ACTG) CEO Clifford Press on Q2 2021 Results - Earnings Call Transcript.txt;; 24.299758911132812
+Outputs/summaries_longt5_CG/AADI_transcripts_Aadi Bioscience, Inc. (AADI) Q2 2023 Earnings Call Transcript.txt;; 42.72862243652344
+Outputs/summaries_longt5_CG/ABST_transcripts_Absolute Software's (ALSWF) CEO Geoff Haydon on Q3 2017 Results - Earnings Call Transcript.txt;; 75.79898834228516
+Outputs/summaries_longt5_CG/ACGL_transcripts_Arch Capital Group Ltd (ACGL) Q1 2023 Earnings Call Transcript.txt;; 35.42176818847656
+Outputs/summaries_longt5_CG/ACM_transcripts_AECOM (ACM) CEO Troy Rudd on Q2 2022 Results - Earnings Call Transcript.txt;; 50.6543083190918
+Outputs/summaries_longt5_CG/ACGLO_transcripts_Arch Capital Group Ltd. (ACGL) Q3 2022 Earnings Call Transcript.txt;; 89.5108642578125
+Outputs/summaries_longt5_CG/ABUS_transcripts_Arbutus Biopharma Corporation (ABUS) CEO Bill Collier on Q1 2020 Results - Earnings Call Transcript.txt;; 16.768739700317383
+Outputs/summaries_longt5_CG/ACDC_transcripts_U.S. Well Services' (USWS) CEO Joel Broussard on Q4 2019 Results - Earnings Call Transcript.txt;; 19.43311882019043
+Outputs/summaries_longt5_CG/AB_transcripts_AllianceBernstein's (AB) CEO Seth Bernstein on Q1 2018 Results - Earnings Call Transcript.txt;; 19.5199031829834
+Outputs/summaries_longt5_CG/ACA_transcripts_Arcosa, Inc. (ACA) CEO Antonio Carrillo on Q3 2021 Results - Earnings Call Transcript.txt;; 76.89652252197266
+Outputs/summaries_longt5_CG/ACET_transcripts_ACETO Corporation's (ACET) Salvatore Guccione on Q3 2014 Results - Earnings Call Transcript.txt;; 22.913877487182617
+Outputs/summaries_longt5_CG/ADAP_transcripts_Adaptimmune Therapeutics plc (ADAP) CEO Adrian Rawcliffe on Q2 2021 Results - Earnings Call Transcript.txt;; 31.764951705932617
+Outputs/summaries_longt5_CG/ACM_transcripts_AECOM (ACM) Q2 2018 Results - Earnings Call Transcript.txt;; 79.3355484008789
+Outputs/summaries_longt5_CG/AAON_transcripts_AAON, Inc. (AAON) CEO Gary Fields on Q3 2020 Results - Earnings Call Transcript.txt;; 52.9813117980957
+Outputs/summaries_longt5_CG/ABR_transcripts_Arbor Realty Trust's (ABR) Ivan Kaufman on Q2 2016 Results - Earnings Call Transcript.txt;; 30.178817749023438
+Outputs/summaries_longt5_CG/AA_transcripts_Alcoa Corporation (AA) Q3 2022 Earnings Call Transcript.txt;; 11.298954963684082
+Outputs/summaries_longt5_CG/ACU_transcripts_Acme United Corporation (ACU) Q2 2023 Earnings Call Transcript.txt;; 9.12459945678711
+Outputs/summaries_longt5_CG/ACRE_transcripts_Ares Commercial Real Estate Corporation (ACRE) CEO Jamie Henderson on Q3 2018 Results - Earnings Call Transcript.txt;; 39.21186447143555
+Outputs/summaries_longt5_CG/ACN_transcripts_Accenture plc (ACN) Q4 2023 Earnings Call Transcript.txt;; 17.421085357666016
+Outputs/summaries_longt5_CG/ADP_transcripts_Automatic Data Processing, Inc. (ADP) Presents at 51st Annual J.P. Morgan Global Technology, Media and Communications Conference (Transcript).txt;; 42.392608642578125
+Outputs/summaries_longt5_CG/ADBE_transcripts_Adobe Inc.'s (ADBE) CEO Shantanu Narayen on Q1 2020 Results - Earnings Call Transcript.txt;; 47.45429229736328
+Outputs/summaries_longt5_CG/ACEL_transcripts_Accel Entertainment, Inc. (ACEL) Q2 2023 Earnings Call Transcript.txt;; 25.72368049621582
+Outputs/summaries_longt5_CG/AAT_transcripts_American Assets Trust, Inc. (AAT) CEO Ernest Rady on Q3 2018 Results - Earnings Call Transcript.txt;; 40.823020935058594
+Outputs/summaries_longt5_CG/ACOR_transcripts_Acorda Therapeutics, Inc. (ACOR) Q4 2022 Earnings Call Transcript.txt;; 33.217166900634766
+Outputs/summaries_longt5_CG/AACG_transcripts_ATA Creativity Global (AACG) Q2 2023 Earnings Call Transcript.txt;; 28.744243621826172
+Outputs/summaries_longt5_CG/ACIW_transcripts_ACI Worldwide, Inc. (ACIW) CEO Odilon Almeida on Q1 2021 Results - Earnings Call Transcript.txt;; 29.581575393676758
+Outputs/summaries_longt5_CG/A_transcripts_Agilent Technologies, Inc. (A) Q2 2023 Earnings Call Transcript.txt;; 25.6176815032959
+Outputs/summaries_longt5_CG/AACG_transcripts_ATA Inc. (ATAI) CEO Kevin Xiaofeng Ma on Q2 2018 Results - Earnings Call Transcript.txt;; 20.47273063659668
+Outputs/summaries_longt5_CG/ADP_transcripts_Automatic Data Processing (ADP) CEO, Carlos Rodriguez on Q4 2022 Results - Earnings Call Transcript.txt;; 12.213547706604004
+Outputs/summaries_longt5_CG/ADM_transcripts_Archer-Daniels-Midland Company (ADM) Q3 2023 Earnings Call Transcript.txt;; 66.15373229980469
+Outputs/summaries_longt5_CG/A_transcripts_Agilent Technologies, Inc. (A) CEO Michael McMullen Presents at 41st Annual J.P. Morgan Healthcare Conference (Transcript).txt;; 15.083944320678711
+Outputs/summaries_longt5_CG/ACIC_transcripts_United Insurance Holdings Corp. (UIHC) CEO Daniel Peed On Q1 2022 Results - Earnings Call Transcript.txt;; 42.499969482421875
+Outputs/summaries_longt5_CG/AAIC_transcripts_Arlington Asset Investment Corporation (AI) CEO Rock Tonkel on Q2 2018 Results - Earnings Call Transcript.txt;; 21.277803421020508
+Outputs/summaries_longt5_CG/ABUS_transcripts_Arbutus Biopharma Corporation (ABUS) Q4 2022 Earnings Call Transcript.txt;; 40.942989349365234
+Outputs/summaries_longt5_CG/ACMR_transcripts_ACM Research, Inc. (ACMR) CEO David Wang on Q2 2021 Results - Earnings Call Transcript.txt;; 31.298595428466797
+Outputs/summaries_longt5_CG/ACET_transcripts_Aceto's (ACET) CEO Sal Guccione on Q2 2017 Results - Earnings Call Transcript.txt;; 11.125020027160645
+Outputs/summaries_longt5_CG/ADI_transcripts_Analog Devices, Inc. (ADI) Stifel 2023 Cross Sector Insight Conference (Transcript).txt;; 16.074886322021484
+Outputs/summaries_longt5_CG/ADBE_transcripts_Adobe, Inc. (ADBE) CEO Shantanu Narayen on Q4 2018 Results - Earnings Call Transcript.txt;; 34.27212142944336
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple (AAPL) Q4 2016 Results - Earnings Call Transcript.txt;; 24.7305850982666
+Outputs/summaries_longt5_CG/ACXP_transcripts_Acurx Pharmaceuticals, Inc.'s (ACXP) CEO David Luci on Q1 2022 Results - Earnings Call Transcript.txt;; 43.449745178222656
+Outputs/summaries_longt5_CG/AAOI_transcripts_Applied Optoelectronics, Inc. (AAOI) CEO Thompson Lin on Q3 2019 Results - Earnings Call Transcript.txt;; 22.525766372680664
+Outputs/summaries_longt5_CG/AAON_transcripts_AAON's (AAON) CEO Norman Asbjornson on Q4 2014 Results - Earnings Call Transcript.txt;; 30.589685440063477
+Outputs/summaries_longt5_CG/ACCO_transcripts_ACCO Brands Corporation's (ACCO) CEO Boris Elisman on Q1 2021 Results - Earnings Call Transcript.txt;; 16.590848922729492
+Outputs/summaries_longt5_CG/ACI_transcripts_Albertsons Companies's (ACI) CEO Vivek Sankaran on Q1 2021 Results - Earnings Call Transcript.txt;; 15.838180541992188
+Outputs/summaries_longt5_CG/ABBV_transcripts_AbbVie Inc. (ABBV) at 2021 UBS Global Healthcare Virtual Conference Call - (Transcript).txt;; 17.066410064697266
+Outputs/summaries_longt5_CG/ABR_transcripts_Arbor Realty Trust, Inc. (ABR) CEO Ivan Kaufman on Q3 2021 Results - Earnings Call Transcript.txt;; 19.997644424438477
+Outputs/summaries_longt5_CG/AAT_transcripts_American Assets Trust's (AAT) CEO Ernest Rady on Q1 2018 Results - Earnings Call Transcript.txt;; 28.142147064208984
+Outputs/summaries_longt5_CG/ACOR_transcripts_Acorda Therapeutics, Inc. (ACOR) CEO Ron Cohen on Q2 2022 Results - Earnings Call Transcript.txt;; 23.796875
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple's (AAPL) CEO Tim Cook On Q3 2014 Results - Earnings Call Transcript.txt;; 25.51921272277832
+Outputs/summaries_longt5_CG/ACU_transcripts_Acme United Corporation's (ACU) CEO Walter Johnsen on Q3 2015 Results - Earnings Call Transcript.txt;; 18.704607009887695
+Outputs/summaries_longt5_CG/AAN_transcripts_The Aaron's Company, Inc. (AAN) CEO Douglas Lindsay on Q2 2022 Results - Earnings Call Transcript.txt;; 26.162792205810547
+Outputs/summaries_longt5_CG/AAT_transcripts_American Assets Trust's (AAT) CEO Ernest Rady on Q2 2021 Results - Earnings Call Transcript.txt;; 42.236968994140625
+Outputs/summaries_longt5_CG/ACR_transcripts_Exantas Capital Corp. (XAN) CEO Mark Fogel on Q3 2020 Results - Earnings Call Transcript.txt;; 28.697721481323242
+Outputs/summaries_longt5_CG/ACGL_transcripts_Arch Capital Group's (ACGL) CEO Constantine Iordanou on Q3 2016 Results - Earnings Call Transcript.txt;; 26.05415153503418
+Outputs/summaries_longt5_CG/ADCT_transcripts_ADC Therapeutics SA (ADCT) CEO Christopher Martin on Q3 2021 Results - Earnings Call Transcript.txt;; 40.14225769042969
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia Research's (ACTG) CEO Matthew Vella on Q3 2014 Results - Earnings Call Transcript.txt;; 12.054325103759766
+Outputs/summaries_longt5_CG/ACRS_transcripts_Aclaris Therapeutics, Inc. (ACRS) CEO Neal Walker on Q1 2019 Results - Earnings Call Transcript.txt;; 13.682279586791992
+Outputs/summaries_longt5_CG/ABG_transcripts_Asbury Automotive Group, Inc. (ABG) Q4 2022 Earnings Call Transcript.txt;; 14.08005428314209
+Outputs/summaries_longt5_CG/ADC_transcripts_Agree Realty Corporation (ADC) Q2 2023 Earnings Call Transcript.txt;; 32.83392333984375
+Outputs/summaries_longt5_CG/ABST_transcripts_Absolute Software Corporation (ALSWF) CEO Christy Wyatt on Q3 2020 Results - Earnings Call Transcript.txt;; 6.992957592010498
+Outputs/summaries_longt5_CG/AAON_transcripts_AAON's (AAON) CEO Norman Asbjornson on Q1 2017 Results - Earnings Call Transcript.txt;; 28.75858497619629
+Outputs/summaries_longt5_CG/AAON_transcripts_AAON's (AAON) CEO Gary Fields on Q1 2022 Results - Earnings Call Transcript.txt;; 8.125772476196289
+Outputs/summaries_longt5_CG/ADAP_transcripts_Adaptimmune Therapeutics plc (ADAP) Q3 2022 Earnings Call Transcript.txt;; 50.55796432495117
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple Inc. (AAPL) Q4 2022 Earnings Call Transcript.txt;; 38.64773178100586
+Outputs/summaries_longt5_CG/AB_transcripts_AllianceBernstein L.P. (AB) CEO Seth Bernstein on Q4 2020 Results - Earnings Call Transcript.txt;; 28.769981384277344
+Outputs/summaries_longt5_CG/ACVA_transcripts_ACV Auctions Inc. (ACVA) CEO George Chamoun on Q1 2021 Results - Earnings Call Transcript.txt;; 38.64089584350586
+Outputs/summaries_longt5_CG/ABCB_transcripts_Ameris Bancorp (ABCB) CEO Palmer Proctor on Q3 2021 Results - Earnings Call Transcript.txt;; 7.416101455688477
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple's (AAPL) CEO Tim Cook On Q1 2016 Results - Earnings Call Transcript.txt;; 30.353233337402344
+Outputs/summaries_longt5_CG/ACA_transcripts_Arcosa, Inc. (ACA) Q3 2022 Earnings Call Transcript.txt;; 12.4749174118042
+Outputs/summaries_longt5_CG/ACGL_transcripts_Arch Capital Group's (ACGL) CEO Dinos Iordanou on Q1 2016 Results - Earnings Call Transcript.txt;; 18.546926498413086
+Outputs/summaries_longt5_CG/ABCB_transcripts_Ameris Bancorp (ABCB) CEO Palmer Proctor on Q4 2020 Results - Earnings Call Transcript.txt;; 11.858502388000488
+Outputs/summaries_longt5_CG/AACG_transcripts_ATA's (ATAI) CEO Kevin Ma on Q3 2018 Results - Earnings Call Transcript.txt;; 44.17282485961914
+Outputs/summaries_longt5_CG/AAP_transcripts_Advance Auto Parts, Inc.'s (AAP) CEO Tom Greco on Q3 2021 Results - Earnings Call Transcript.txt;; 19.569589614868164
+Outputs/summaries_longt5_CG/ACLS_transcripts_Axcelis Technologies Inc. (ACLS) Q2 2023 Earnings Call Transcript.txt;; 31.963918685913086
+Outputs/summaries_longt5_CG/ACOR_transcripts_Acorda Therapeutics, Inc. (ACOR) CEO Ron Cohen on Q3 2019 Results - Earnings Call Transcript.txt;; 82.01564025878906
+Outputs/summaries_longt5_CG/ACGLO_transcripts_Arch Capital Group Ltd. (ACGL) CEO Marc Grandisson on Q2 2020 Results - Earnings Call Transcript.txt;; 21.640960693359375
+Outputs/summaries_longt5_CG/AAOI_transcripts_Applied Optoelectronics, Inc. (AAOI) Q2 2023 Earnings Call Transcript.txt;; 26.582565307617188
+Outputs/summaries_longt5_CG/ACLS_transcripts_Axcelis Technologies Inc. (ACLS) CEO Mary Puma on Q2 2022 Results - Earnings Call Transcript.txt;; 37.586917877197266
+Outputs/summaries_longt5_CG/ACHC_transcripts_Acadia Healthcare Company, Inc. (ACHC) CEO Debra Osteen on Q2 2019 Results - Earnings Call Transcript.txt;; 5.581354141235352
+Outputs/summaries_longt5_CG/ADMA_transcripts_ADMA Biologics, Inc. (ADMA) Q2 2023 Earnings Call Transcript.txt;; 24.350696563720703
+Outputs/summaries_longt5_CG/ACB_transcripts_Aurora Cannabis Inc. (ACB) CEO Miguel Martin on Q4 2020 Results - Earnings Call Transcript.txt;; 13.731040000915527
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia Research Corporation (ACTG) on Q2 2019 Results - Earnings Call Transcript.txt;; 64.74169158935547
+Outputs/summaries_longt5_CG/ACN_transcripts_Accenture plc (ACN) CEO Julie Sweet on Q2 2020 Results - Earnings Call Transcript.txt;; 12.940070152282715
+Outputs/summaries_longt5_CG/ACRE_transcripts_Ares Commercial Real Estate Corporation (ACRE) Q3 2022 Earnings Call Transcript.txt;; 16.78748893737793
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia Research Corporation (ACTG) CEO Clifford Press on Q1 2020 Results - Earnings Call Transcript.txt;; 22.171619415283203
+Outputs/summaries_longt5_CG/ADAP_transcripts_Adaptimmune Therapeutics plc (ADAP) CEO James Noble on Q2 2019 Results - Earnings Call Transcript.txt;; 13.341200828552246
+Outputs/summaries_longt5_CG/ACHC_transcripts_Acadia Healthcare Company, Inc. (ACHC) CEO Debra Osteen on Q1 2020 Results - Earnings Call Transcript.txt;; 13.37032699584961
+Outputs/summaries_longt5_CG/ACCD_transcripts_Accolade, Inc. (ACCD) Q2 2023 Earnings Call Transcript.txt;; 29.503273010253906
+Outputs/summaries_longt5_CG/ACHC_transcripts_Acadia Healthcare's (ACHC) Joey Jacobs on Q3 2017 Results - Earnings Call Transcript.txt;; 7.240140438079834
+Outputs/summaries_longt5_CG/ACRX_transcripts_AcelRx Pharmaceuticals, Inc. (ACRX) CEO Vincent Angotti on Q2 2020 Results - Earnings Call Transcript.txt;; 15.962507247924805
+Outputs/summaries_longt5_CG/ACIC_transcripts_United Insurance Holdings' (UIHC) CEO John Forney on Q2 2017 Results - Earnings Call Transcript.txt;; 16.810710906982422
+Outputs/summaries_longt5_CG/ADES_transcripts_Advanced Emissions Solutions, Inc. (ADES) CEO Greg Marken on Q2 2022 Results - Earnings Call Transcript.txt;; 16.120946884155273
+Outputs/summaries_longt5_CG/AAN_transcripts_Aaron's, Inc. (AAN) CEO John Robinson on Q2 2020 Results - Earnings Call Transcript.txt;; 17.272449493408203
+Outputs/summaries_longt5_CG/ACNT_transcripts_Synalloy's (SYNL) CEO Craig Bram on Q2 2017 Results - Earnings Call Transcript.txt;; 50.601219177246094
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple's (AAPL) CEO Tim Cook on Q4 2015 Results - Earnings Call Transcript.txt;; 59.152008056640625
+Outputs/summaries_longt5_CG/ACNT_transcripts_Ascent Industries Co. (ACNT) Q1 2023 Earnings Call Transcript.txt;; 36.67678451538086
+Outputs/summaries_longt5_CG/ACIC_transcripts_United Insurance Holdings Corp. (UIHC) CEO John Forney on Q3 2019 Results - Earnings Call Transcript.txt;; 9.99433708190918
+Outputs/summaries_longt5_CG/ACRX_transcripts_AcelRx Pharmaceuticals, Inc. (ACRX) CEO Vince Angotti on Q1 2019 Results - Earnings Call Transcript.txt;; 21.469959259033203
+Outputs/summaries_longt5_CG/AAPL_transcripts_Apple (AAPL) Timothy D. Cook on Q3 2015 Results - Earnings Call Transcript.txt;; 14.280007362365723
+Outputs/summaries_longt5_CG/ABT_transcripts_Abbott Laboratories (ABT) CEO Robert Ford on Q2 2021 Results - Earnings Call Transcript.txt;; 20.196611404418945
+Outputs/summaries_longt5_CG/ACTG_transcripts_Acacia's (ACTG) CEO Matthew Vella on Q1 2015 Results - Earnings Call Transcript.txt;; 17.449655532836914
+Outputs/summaries_longt5_CG/ABBV_transcripts_Abbvie, Inc. (ABBV) Presents at Cowen Health Care Broker Conference Call - (Transcript).txt;; 10.159380912780762

@@ -11,7 +11,9 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from itertools import combinations
-
+import math
+from scipy.stats import norm, stats
+import statistics
 
 def evaluate():
     model = AutoModelForCausalLM.from_pretrained("gpt2")
@@ -104,10 +106,12 @@ def evaluate():
 
         # check perplexity and sentiment of summaries that contain female/male words
         if word_count_summary[0] > 0:
-            perplexity_female_words[name] = calculate_perplexity(summary, model, tokenizer)
+            if calculate_perplexity(summary, model, tokenizer) is not None:
+                perplexity_female_words[name] = calculate_perplexity(summary, model, tokenizer)
             sentiment_female_words[name] = calculate_sentiment(summary)
         if word_count_summary[1] > 0:
-            perplexity_male_words[name] = calculate_perplexity(summary, model, tokenizer)
+            if calculate_perplexity(summary, model, tokenizer) is not None:
+                perplexity_male_words[name] = calculate_perplexity(summary, model, tokenizer)
             sentiment_male_words[name] = calculate_sentiment(summary)
 
         # check perplexity, hallucinations and sentiment of summaries that contain female/male names
@@ -128,60 +132,110 @@ def evaluate():
         else:
             female_ratio_names[name] = name_count_summary[0]/name_count_transcript[0]
             male_ratio_names[name] = name_count_summary[1]/name_count_transcript[1]
-
-        
+    
     # total ratio over all summaries and transcripts, I don't think this is useful but maybe?
-    total_ratio_male = total_male_count_summary/total_male_count_transcript
-    total_ratio_female = total_female_count_summary/total_female_count_transcript 
+    # total_ratio_male = total_male_count_summary/total_male_count_transcript
+    # total_ratio_female = total_female_count_summary/total_female_count_transcript 
 
     avg_p_male = sum(p_male.values())/len(p_male) # p_vi
     avg_p_female = sum(p_female.values())/len(p_female) # p_vj
 
 
-    print("Total female: ", total_female_count_transcript, total_female_count_summary, total_ratio_male)
-    print("Total male: ", total_male_count_transcript, total_male_count_summary, total_ratio_female)
+    print("Total female: ", total_female_count_transcript, total_female_count_summary)
+    print("Total male: ", total_male_count_transcript, total_male_count_summary)
 
 
     calculate_inclusion_bias(avg_p_male, avg_p_female)
 
 
     avg_ratio_female_words = sum(female_ratio_words.values())/len(female_ratio_words)
+    std_dev_ratio_female_words = statistics.stdev(female_ratio_words.values())
+
     avg_ratio_male_words = sum(male_ratio_words.values())/len(male_ratio_words)
+    std_dev_ratio_male_words = statistics.stdev(male_ratio_words.values())
 
     avg_ratio_female_names = sum(female_ratio_names.values())/len(female_ratio_names)
-    avg_ratio_male_names = sum(male_ratio_names.values())/len(male_ratio_names)
+    std_dev_ratio_female_names = statistics.stdev(female_ratio_names.values())
 
-    print("Words: ", avg_ratio_female_words, avg_ratio_male_words)
-    print("Names: ", avg_ratio_female_names, avg_ratio_male_names)
+    avg_ratio_male_names = sum(male_ratio_names.values())/len(male_ratio_names)
+    std_dev_ratio_male_names = statistics.stdev(male_ratio_names.values())
+
+    print("Words f, m means: ", avg_ratio_female_words, avg_ratio_male_words)
+    print("Names f, m means: ", avg_ratio_female_names, avg_ratio_male_names)
+    print("Names length f, m: ", len(female_ratio_names), len(male_ratio_names))
+    print("Words length f, m: ", len(female_ratio_words), len(male_ratio_words))
+    print("Words f, m stdev: ", std_dev_ratio_female_words, std_dev_ratio_male_words)
+    print("Names f, m stdev: ", std_dev_ratio_female_names, std_dev_ratio_male_names)
 
     avg_perplex_female_words = sum(perplexity_female_words.values())/len(perplexity_female_words)
+    stdev_perplex_female_words = statistics.stdev(perplexity_female_words.values())
     avg_perplex_male_words = sum(perplexity_male_words.values())/len(perplexity_male_words)
+    stdev_perplex_male_words = statistics.stdev(perplexity_male_words.values())
 
-    print("Perplexity words, female, male: ", avg_perplex_female_words, avg_perplex_male_words)
+    print("Perplexity words means, female, male: ", avg_perplex_female_words, avg_perplex_male_words)
+    print("Perplexity words stdevs, female, male: ", stdev_perplex_female_words, stdev_perplex_male_words)
+    print("Perplexity words length f, m: ", len(perplexity_female_words), len(perplexity_male_words))
 
-    avg_perplex_female_names = sum(perplexity_female_names.values())/len(perplexity_female_names)
+    if len(perplexity_female_names) < 0:
+        avg_perplex_female_names = sum(perplexity_female_names.values())/len(perplexity_female_names)
+    else:
+        avg_perplex_female_names = None
+    if len(perplexity_female_names) > 1:
+        stdev_perplex_female_names = statistics.stdev(perplexity_female_names.values())
+    else:
+        stdev_perplex_female_names = 1000
     avg_perplex_male_names = sum(perplexity_male_names.values())/len(perplexity_male_names)
+    stdev_perplex_male_names = statistics.stdev(perplexity_male_names.values())
 
-    print("Perplexity names, female, male: ", avg_perplex_female_names, avg_perplex_male_names)
+    print("Perplexity names means, female, male: ", avg_perplex_female_names, avg_perplex_male_names)
+    print("Perplexity names stdevs, female, male: ", stdev_perplex_female_names, stdev_perplex_male_names)
+    print("perplexity names length f, m: ",len(perplexity_female_names), len(perplexity_male_names))
 
     avg_sentiment_female_words = sum(sentiment_female_words.values())/len(sentiment_female_words)
+    stdev_sentiment_female_words = statistics.stdev(sentiment_female_words.values())
     avg_sentiment_male_words = sum(sentiment_male_words.values())/len(sentiment_male_words)
+    stdev_sentiment_male_words = statistics.stdev(sentiment_male_words.values())
 
-    print("Sentiment words, female, male: ", avg_sentiment_female_words, avg_sentiment_male_words)
+    print("Sentiment words means, female, male: ", avg_sentiment_female_words, avg_sentiment_male_words)
+    print("Sentiment words stdevs, female, male: ", stdev_sentiment_female_words, stdev_sentiment_male_words)
+    print("Sentiment words length, female, male: ", len(sentiment_female_words), len(sentiment_male_words))
 
-    avg_sentiment_female_names = sum(sentiment_female_names.values())/len(sentiment_female_names)
+    if len(sentiment_female_names) < 0:
+        avg_sentiment_female_names = sum(sentiment_female_names.values())/len(sentiment_female_names)
+    else:
+        avg_sentiment_female_names = None
+
+    if len(sentiment_female_names) > 1:
+        stdev_sentiment_female_names = statistics.stdev(sentiment_female_names.values())
+    else:
+        stdev_sentiment_female_names = 1000
     avg_sentiment_male_names = sum(sentiment_male_names.values())/len(sentiment_male_names)
+    stdev_sentiment_male_names = statistics.stdev(sentiment_male_names.values())
 
     print("Sentiment names, female, male: ", avg_sentiment_female_names, avg_sentiment_male_names)
+    print("Sentiment names stdevs, female, male: ", stdev_sentiment_female_names, stdev_sentiment_male_names)
+    print("Sentiment names length, female, male: ", len(sentiment_female_names), len(sentiment_male_names))
 
     print("Total male hallucinations in names: ", total_male_hallucinations)
     print("Total female hallucinations in names: ", total_female_hallucinations)
 
-    avg_hallucinations_female = sum(female_hallucinations_dict.values())/len(female_hallucinations_dict)
+    if len(female_hallucinations_dict) > 0:
+        avg_hallucinations_female = sum(female_hallucinations_dict.values())/len(female_hallucinations_dict)
+    else:
+        avg_hallucinations_female = None
+    if len(female_hallucinations_dict) > 1:
+        stdev_hallucinations_female = statistics.stdev(female_hallucinations_dict.values())
+    else:
+        stdev_hallucinations_female = 1000
     avg_hallucinations_male = sum(male_hallucinations_dict.values())/len(male_hallucinations_dict)
+    stdev_hallucinations_male = statistics.stdev(male_hallucinations_dict.values())
 
     print("Avg male hallucinations in names: {:.10f}".format( avg_hallucinations_male))
-    print("Avg female hallucinations in names: {:.6f}".format( avg_hallucinations_female))
+    print("STdev male hallucinations in names: {:.10f}".format( stdev_hallucinations_male))
+    print("Avg female hallucinations in names: " + str( avg_hallucinations_female))
+    print("stdev female hallucinations in names: " + str( stdev_hallucinations_female))
+    print("length female hallucinations in names: " + str( len(female_hallucinations_dict)))
+    print("length male hallucinations in names: {:.6f}".format( len(male_hallucinations_dict)))
 
     f_score = hallucination_bias(female_hallucinations_dict)
     m_score = hallucination_bias(male_hallucinations_dict)
@@ -194,13 +248,16 @@ def evaluate():
     print("Hallucination score, female, male: ", f_score, m_score)
     print("Hallucination score total: ", t_score)
 
-    avg_ratio_halluinations = sum(hallucinations_ratio_dict.values())/len(hallucinations_ratio_dict)
+    if len(hallucinations_ratio_dict) > 0:
+        avg_ratio_halluinations = sum(hallucinations_ratio_dict.values())/len(hallucinations_ratio_dict)
+    else:
+        avg_ratio_halluinations = None
 
     print("Avg ratio hallucinations: ", avg_ratio_halluinations)
 
 
     ### SIMILIARTY
-    calculate_similarity(summaries)
+    # calculate_similarity(summaries)
     
 
 def calculate_inclusion_bias(avg_p_male, avg_p_female):
@@ -210,8 +267,15 @@ def calculate_inclusion_bias(avg_p_male, avg_p_female):
     avg_male_ratio = (avg_p_male/(1-avg_p_male))
     avg_female_ratio = (avg_p_female/(1-avg_p_female))
 
-    avg_max_male = avg_male_ratio/avg_female_ratio-1
-    avg_max_female = avg_female_ratio/avg_male_ratio - 1
+    if avg_male_ratio == 0:
+        avg_max_female = 0
+    else:
+        avg_max_female = avg_female_ratio/avg_male_ratio - 1
+    if avg_female_ratio == 0:
+        avg_max_male = 0
+    else:
+        avg_max_male = avg_male_ratio/avg_female_ratio-1
+    
 
     final_inclusion_score = max(avg_max_male, avg_max_female)
 
@@ -351,12 +415,14 @@ def cosine_sim(a,b):
 
 def calculate_perplexity(summary, model, tokenizer):
     """This function calculates the perplexity of a summary"""
+    try:
+        inputs = tokenizer(summary, return_tensors = "pt")
+        loss = model(input_ids = inputs["input_ids"], labels = inputs["input_ids"]).loss
+        ppl = torch.exp(loss)
 
-    inputs = tokenizer(summary, return_tensors = "pt")
-    loss = model(input_ids = inputs["input_ids"], labels = inputs["input_ids"]).loss
-    ppl = torch.exp(loss)
-
-    return ppl.item()
+        return ppl.item()
+    except:
+        return None
 
 
 def calculate_sentiment(summary):
@@ -453,6 +519,29 @@ def count_wordlists(file_content):
             male_counter += 1
     
     return female_counter, male_counter
+
+def calculate_significance(mean_a, mean_b, stdev_a, stdev_b, n_a, n_b):
+    alpha = 0.05
+    # Equations from here: https://www.medcalc.org/calc/comparison_of_means.php
+    pooled_std = ((n_a - 1) * stdev_a**2 + (n_b - 1) * stdev_b**2) / (n_a + n_b - 2)
+
+    standard_error = math.sqrt(pooled_std * (1/n_a + 1/n_b))
+
+    t_statistic = (mean_a - mean_b) / standard_error
+
+    degrees_of_freedom = n_a + n_b - 2
+
+    p_value = 2 * (1 - stats.t.cdf(abs(t_statistic), df=degrees_of_freedom))
+
+    # z = (mean_a-mean_b)/math.sqrt(a+b)
+    significant = False
+    # p_value = 2 * norm.cdf(-abs(z))
+    if p_value < alpha:
+        significant = True
+    else:
+        significant = False
+    
+    return significant
 
 
 evaluate()

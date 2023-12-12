@@ -3,7 +3,9 @@ legal_perplexity_file_name = 'Outputs/perplexity/perplexity_legal_led.txt'
 
 perplexity_file_name = 'Outputs/perplexity/perplexity.txt'
 
-filenames = [legal_perplexity_file_name, perplexity_file_name]
+longt5_file_name = 'Outputs/perplexity/longt5_CG.txt'
+
+filenames = [legal_perplexity_file_name, perplexity_file_name, longt5_file_name]
 
 mean_ppl = {}
 for file in filenames:

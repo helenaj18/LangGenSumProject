@@ -2,7 +2,7 @@ import glob
 import os
 
 # Specify the folder path and file pattern
-folder_path = 'Outputs/summaries_led_base'
+folder_path = 'Outputs/summaries_longt5_CG'
 file_pattern = '*.txt'  # Example: List all .txt files
 
 # Use glob to get a list of files that match the pattern
@@ -21,5 +21,5 @@ for filename in files:
 avg_length = sum(length.values())/len(length)
 avg_no_of_words = sum(no_of_words.values())/len(no_of_words)
 
-print("Avg length for legal summaries in characters: ", avg_length)
-print("Avg no of words for legal summaries in words: ", avg_no_of_words)
+print("Avg length for longT5 summaries in characters: ", avg_length)
+print("Avg no of words for longT5 summaries in words: ", avg_no_of_words)

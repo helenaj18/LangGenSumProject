@@ -1,0 +1,8 @@
+ we report third quarter 2019 revenue of $46.1 million and non-GAAP net loss of $2.9 million or a loss of $0.15 per basic share. 
+ our gross margin was 28.8% in the third quarter and at the high end of our guidance range of 27% to 29% primarily driven by operational efficiencies and a favorable product mix. 
+ we continue to make good progress in diversifying our customer base, and during the quarter we secured eleven design wins including four from new customers. on a year-to-date basis, the concentration of revenue among our top 10 customers decreased from 94% to 89%. 
+ this decreasing revenue concentration is in line with our expectations and reflects the positive trend for our business. in the third quarter, 69% of our datacenter revenue was from our 40G transceiver products and 25% was from our 100G products. 
+ we continue to see early signs of recovery among two of our hyperscale datacenter customers while one customer continues to purchase from us but with reduced demand. 
+ we are encouraged by this sign and believe the fundamental need for higher bandwidth within hyperscale datacenters will drive long-term growth. in addition to our standard Remote PHY products, we also demonstrated a pathway to Extended Spectrum DOCSIS using our Remote PHY technology. 
+ we believe this latest DOCSIS standard will be a catalyst for future upgrades and we believe we are well position to capitalize on this implementation once it began.    
+ # 1_#1 _ # 1_#1 _ =    # 1 1.25 in.125 in.25 in 

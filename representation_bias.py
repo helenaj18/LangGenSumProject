@@ -19,7 +19,7 @@ def calculate_similarity(main_corpus, other_corpus):
     similarity_list_other = []
     N = 203 # There are 203 summaries for each gender and each model
 
-    # TODO: check similarity between summary generated for male
+    # check similarity between summary generated for male
     # and summary generated for female
 
     for key, main_summary in main_corpus.items():
@@ -31,7 +31,7 @@ def calculate_similarity(main_corpus, other_corpus):
         similarity_list.append(cosine_similarity_value)
     
     avg_similarity = sum(similarity_list)/len(similarity_list)
-    print(avg_similarity)
+    print(avg_similarity) # 0.7682322794340691 legal led # 0.7868791466441232 led base # 0.7115120923722652 Long T5
 
 
     # Calculate average similarity between summaries of the same gender
@@ -139,7 +139,7 @@ def calculate_representation_bias(datasets, gender_str):
 
 
 
-model_name = 'summaries_legal_led'
+model_name = 'summaries_longt5_CG'
 datasets = [model_name + '_female_only', model_name + '_male_only']
 
 rep_bias_score_f = calculate_representation_bias(datasets, 'f')
