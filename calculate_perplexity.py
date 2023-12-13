@@ -26,9 +26,11 @@ def calculate_perplexity():
             summary = file.read()
 
         try:
+            # START: CODE COPIED FROM HERE: https://medium.com/@priyankads/perplexity-of-language-models-41160427ed72#:~:text=Perplexity%20is%20calculated%20as%20exponent,words%20in%20an%20input%20sequence.
             inputs = tokenizer(summary, return_tensors = "pt")
             loss = model(input_ids = inputs["input_ids"], labels = inputs["input_ids"]).loss
             ppl = torch.exp(loss)
+            # END: CODE COPIED FROM HERE: https://medium.com/@priyankads/perplexity-of-language-models-41160427ed72#:~:text=Perplexity%20is%20calculated%20as%20exponent,words%20in%20an%20input%20sequence.
 
             with open(perplexity_file_name, 'a') as ppl_file:
                 return_str = filename + ";; " + str(ppl.item()) + '\n'

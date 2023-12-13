@@ -15,11 +15,10 @@ import math
 from scipy.stats import norm, stats
 import statistics
 
-def evaluate():
+def evaluate(model_name):
     model = AutoModelForCausalLM.from_pretrained("gpt2")
     tokenizer = AutoTokenizer.from_pretrained("gpt2")
     # Specify the folder path and file pattern
-    model_name = 'summaries_longT5_CG'
     folder_path = 'Outputs/' + model_name
     file_pattern = '*.txt'   
 
@@ -123,8 +122,6 @@ def evaluate():
             male_hallucinations_dict[name] = male_hallucinations/name_count_summary[1]
             perplexity_male_names[name] = calculate_perplexity(summary, model, tokenizer)
             sentiment_male_names[name] = calculate_sentiment(summary)
-        # if name_count_summary[0] + name_count_summary[1] > 0:
-        #     hallucinations_dict[name] = hallucinations/(name_count_summary[0] + name_count_summary[1])
 
 
         if name_count_transcript[0] == 0 or name_count_transcript[1] == 0:
@@ -256,10 +253,6 @@ def evaluate():
     print("Avg ratio hallucinations: ", avg_ratio_halluinations)
 
 
-    ### SIMILIARTY
-    # calculate_similarity(summaries)
-    
-
 def calculate_inclusion_bias(avg_p_male, avg_p_female):
     """Calculates the inclusion bias like it's described in 
     section 4.1.2 of the paper"""
@@ -282,10 +275,6 @@ def calculate_inclusion_bias(avg_p_male, avg_p_female):
     print("Female inclusion score: ", avg_max_female)
     print("Male inclusion score: ", avg_max_male)
     print("Final inclusion score: ", final_inclusion_score)
-
-
-
-
 
 
 # START: COPIED FROM: https://github.com/rigetti/forest-benchmarking/blob/master/forest/benchmarking/distance_measures.py
@@ -390,35 +379,14 @@ def get_hallucinated_entities(name_count_summary, name_count_transcript):
         return hallucinations, None
     
 
-def calculate_similarity(corpus):
-    similarity_score = {}
-    vectorizer = CountVectorizer()
-    # Fit vectorizer to corpus
-    bow = vectorizer.fit_transform(corpus)
-
-    unique_pairs = set()
-
-    for pair in combinations(bow, 2):
-        unique_pairs.add(tuple(sorted(pair)))
-
-    for pair in unique_pairs:
-        a,b = pair
-        similarity_score[pair] = cosine_sim(a.toarray().squeeze(), b.toarray().squeeze())
-
-    avg_similarity = sum(similarity_score)/len(similarity_score)
-    return avg_similarity
-
-### START: https://www.kaggle.com/code/samuelcortinhas/nlp3-bag-of-words-and-similarity/notebook
-def cosine_sim(a,b):
-    return np.dot(a,b)/(np.linalg.norm(a)*np.linalg.norm(b))
-### END: https://www.kaggle.com/code/samuelcortinhas/nlp3-bag-of-words-and-similarity/notebook
-
 def calculate_perplexity(summary, model, tokenizer):
     """This function calculates the perplexity of a summary"""
     try:
+        # START: CODE COPIED FROM HERE: https://medium.com/@priyankads/perplexity-of-language-models-41160427ed72#:~:text=Perplexity%20is%20calculated%20as%20exponent,words%20in%20an%20input%20sequence.
         inputs = tokenizer(summary, return_tensors = "pt")
         loss = model(input_ids = inputs["input_ids"], labels = inputs["input_ids"]).loss
         ppl = torch.exp(loss)
+        # END: CODE COPIED FROM HERE: https://medium.com/@priyankads/perplexity-of-language-models-41160427ed72#:~:text=Perplexity%20is%20calculated%20as%20exponent,words%20in%20an%20input%20sequence.
 
         return ppl.item()
     except:
@@ -429,6 +397,7 @@ def calculate_sentiment(summary):
     """This function calculates the average sentiment of a summary using
     TextBlob"""
     summary_sentiment = 0
+    # START: CODE COPIED FROM: https://textblob.readthedocs.io/en/dev/
     blob = TextBlob(summary)
     blob.tags           # [('The', 'DT'), ('titular', 'JJ'),
                         #  ('threat', 'NN'), ('of', 'IN'), ...]
@@ -436,6 +405,7 @@ def calculate_sentiment(summary):
     blob.noun_phrases   # WordList(['titular threat', 'blob',
                         #            'ultimate movie monster',
                         #            'amoeba-like mass', ...])
+    # END: CODE COPIED FROM: https://textblob.readthedocs.io/en/dev/
 
     for sentence in blob.sentences:
         summary_sentiment += sentence.sentiment.polarity
@@ -521,6 +491,8 @@ def count_wordlists(file_content):
     return female_counter, male_counter
 
 def calculate_significance(mean_a, mean_b, stdev_a, stdev_b, n_a, n_b):
+    """This function calculates the significance between two numbers,
+    a and b"""
     alpha = 0.05
     # Equations from here: https://www.medcalc.org/calc/comparison_of_means.php
     pooled_std = ((n_a - 1) * stdev_a**2 + (n_b - 1) * stdev_b**2) / (n_a + n_b - 2)
@@ -544,4 +516,8 @@ def calculate_significance(mean_a, mean_b, stdev_a, stdev_b, n_a, n_b):
     return significant
 
 
-evaluate()
+model_names = ['summaries_led_base', 'summaries_legal_led', 'summaries_longT5_CG']
+for mn in model_names:
+    print('--------------------')
+    print(mn)
+    evaluate(mn)

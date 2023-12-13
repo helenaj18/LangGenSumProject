@@ -4,7 +4,6 @@ import torch
 from transformers import AutoTokenizer, LEDForConditionalGeneration, LEDTokenizer
 
 
-# START: COPIED FROM: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
 
 model = LEDForConditionalGeneration.from_pretrained("allenai/led-large-16384-arxiv")
 tokenizer = AutoTokenizer.from_pretrained("allenai/led-large-16384-arxiv")
@@ -12,7 +11,7 @@ tokenizer = AutoTokenizer.from_pretrained("allenai/led-large-16384-arxiv")
 # model = LEDForConditionalGeneration.from_pretrained("nsi319/legal-led-base-16384")
 # tokenizer = AutoTokenizer.from_pretrained("nsi319/legal-led-base-16384")  
 
-# END: COPIED FROM: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+# END: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
 
 # Specify the folder path and file pattern
 folder_path = 'Outputs/txt_files'
@@ -27,16 +26,16 @@ for filename in files:
         txt_content = file.read()
     
     summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt' # this is used to generate summaries for the same files each time
-    new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_led_base/")+'.txt'
+    new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_demo/")+'.txt'
     if os.path.exists(summary_file_name):
         try: 
-            # START: COPIED FROM: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+            # START: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
             inputs = tokenizer.encode(txt_content, return_tensors="pt")
             global_attention_mask = torch.zeros_like(inputs)
             global_attention_mask[:, 0] = 1
             summary_ids = model.generate(inputs, global_attention_mask=global_attention_mask, num_beams=3, max_length=2048, no_repeat_ngram_size=10)
             summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True, clean_up_tokenization_spaces=True)
-            # END: COPIED FROM: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+            # END: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
             with open(new_summary_file_name, 'w') as text_file:
                 text_file.write(summary)
                 print("Summarized: ", new_summary_file_name)

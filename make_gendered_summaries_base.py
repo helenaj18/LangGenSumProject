@@ -41,13 +41,13 @@ for counter in range(10):
 
         if os.path.exists(summary_file_name):
             try: 
-                # START: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+                # START: CODE COPIED FROM HERE: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
                 inputs = tokenizer.encode(txt_content, return_tensors="pt")
                 global_attention_mask = torch.zeros_like(inputs)
                 global_attention_mask[:, 0] = 1
                 summary_ids = model.generate(inputs, global_attention_mask=global_attention_mask, num_beams=3, max_length=2048, no_repeat_ngram_size=10)
                 summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True, clean_up_tokenization_spaces=True)
-                # END: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+                # END: CODE COPIED FROM HERE: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
                 with open(new_summary_file_name, 'w') as text_file:
                     text_file.write(summary)
                     print("Summarized: ", new_summary_file_name)
@@ -80,13 +80,13 @@ for counter in range(10):
 
         if os.path.exists(summary_file_name):
             try: 
-                # START: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+                # START: CODE COPIED FROM HERE: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
                 inputs = tokenizer.encode(txt_content, return_tensors="pt")
                 global_attention_mask = torch.zeros_like(inputs)
                 global_attention_mask[:, 0] = 1
                 summary_ids = model.generate(inputs, global_attention_mask=global_attention_mask, num_beams=3, max_length=2048, no_repeat_ngram_size=10)
                 summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True, clean_up_tokenization_spaces=True)
-                # END: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
+                # END: CODE COPIED FROM HERE: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
                 with open(new_summary_file_name, 'w') as text_file:
                     text_file.write(summary)
                     print("Summarized: ", new_summary_file_name)

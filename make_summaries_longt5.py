@@ -1,10 +1,10 @@
-# CODE IS BASED ON THIS: https://huggingface.co/google/long-t5-local-base 
-# CODE IS BASED ON THIS: https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
+# CODE IS BASED ON THIS: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
 from transformers import AutoTokenizer, LongT5Model, LongT5ForConditionalGeneration
 import glob
 import os
 import torch
 
+# START: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
 # tokenizer = AutoTokenizer.from_pretrained("google/long-t5-local-base")
 # model = LongT5Model.from_pretrained("google/long-t5-local-base")
 
@@ -13,6 +13,7 @@ model = LongT5ForConditionalGeneration.from_pretrained(
     "Stancld/longt5-tglobal-large-16384-pubmed-3k_steps"
 )
 
+# END: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
 # Specify the folder path and file pattern
 folder_path = 'Outputs/txt_files'
 file_pattern = '*.txt'   
@@ -29,6 +30,7 @@ for filename in files:
             with open(filename) as file:
                 txt_content = file.read()
 
+            # START: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
             input = "Please summarize this article: " + txt_content
             inputs = tokenizer(input, return_tensors="pt")
             input_ids = inputs.input_ids
@@ -37,7 +39,7 @@ for filename in files:
                 outputs = model.generate(input_ids, max_length=2048, no_repeat_ngram_size=10)
             
             summary = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
+            # END: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
             with open(new_summary_file_name, 'w') as text_file:
                 text_file.write(summary)
                 print("Summarized: ", new_summary_file_name)

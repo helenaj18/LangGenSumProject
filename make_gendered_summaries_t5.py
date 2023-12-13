@@ -5,10 +5,12 @@ import glob
 import os
 import torch
 
+# START: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
 tokenizer = AutoTokenizer.from_pretrained("Stancld/longt5-tglobal-large-16384-pubmed-3k_steps")
 model = LongT5ForConditionalGeneration.from_pretrained(
     "Stancld/longt5-tglobal-large-16384-pubmed-3k_steps"
 )
+# END: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
 
 for counter in range(10):
     # FEMALE
@@ -33,7 +35,7 @@ for counter in range(10):
             try:
                 with open(filename) as file:
                     txt_content = file.read()
-
+                # START: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
                 input = "Please summarize this article: " + txt_content
                 inputs = tokenizer(input, return_tensors="pt")
                 input_ids = inputs.input_ids
@@ -42,7 +44,7 @@ for counter in range(10):
                     outputs = model.generate(input_ids, max_length=2048, no_repeat_ngram_size=10)
                 
                 summary = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
+                # END: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
                 with open(new_summary_file_name, 'w') as text_file:
                     text_file.write(summary)
                     print("Summarized: ", new_summary_file_name)
@@ -72,7 +74,7 @@ for counter in range(10):
             try:
                 with open(filename) as file:
                     txt_content = file.read()
-
+                # START: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
                 input = "Please summarize this article: " + txt_content
                 inputs = tokenizer(input, return_tensors="pt")
                 input_ids = inputs.input_ids
@@ -81,7 +83,7 @@ for counter in range(10):
                     outputs = model.generate(input_ids, max_length=2048, no_repeat_ngram_size = 10)
                 
                 summary = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
+                # END: COPIED FROM: https://huggingface.co/google/long-t5-local-base and https://huggingface.co/docs/transformers/v4.35.2/en/model_doc/longt5#transformers.LongT5ForConditionalGeneration
                 with open(new_summary_file_name, 'w') as text_file:
                     text_file.write(summary)
                     print("Summarized: ", new_summary_file_name)
