@@ -92,7 +92,7 @@ All data can be found under /Outputs where:
 
 
 ## Experiments and Evaluation
-This section describes the files used to do the experiments
+This section describes the files used to do the experiments and evaluation
 
 ### evaluation.py
 This function combines multiple experiments and evaluations in one file. The *folder_path* string can be changed to check for other models. It calculates inclusion bias, hallucination bias, representation bias, sentiment, perplexity, word list ratios, name list ratios, and hallucunation ratios.
