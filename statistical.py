@@ -1,21 +1,6 @@
 from scipy import stats
 import math
 
-
-# # Example data for two groups
-# group1 = [1, 2, 3, 4, 5]
-# group2 = [6, 7, 8, 9, 10]
-
-# # Perform t-test
-# t_statistic, p_value = ttest_ind(group1, group2)
-
-# # Check for significance
-# if p_value < 0.05:
-#     print("The difference is statistically significant.")
-# else:
-#     print("The difference is not statistically significant.")
-
-
 def calculate_significance(mean_a, mean_b, stdev_a, stdev_b, n_a, n_b, description):
     alpha = 0.05
     # Equations from here: https://www.medcalc.org/calc/comparison_of_means.php
@@ -41,20 +26,6 @@ def calculate_significance(mean_a, mean_b, stdev_a, stdev_b, n_a, n_b, descripti
     
     return significant
 
-
-
-# def calculate_significance(a, b, string):
-#     z = (a-b)/math.sqrt(a+b)
-#     significant = False
-#     p_value = 2 * norm.cdf(-abs(z))
-#     if p_value < 0.05:
-#         significant = True
-#         print("p < 0.05 so the difference is significant for: " + string)
-#     else:
-#         significant = False
-#         print("p > 0.05 so the difference is not significant for: " + string)
-    
-#     return significant
 
 # Significance within the same model
 calculate_significance(0.16970443349753692, 0.39950934396747245, 0.24337270850338416, 0.1907044302057675, 203, 203, "Female vs male words ratio LED-base") 

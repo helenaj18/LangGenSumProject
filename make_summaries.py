@@ -25,8 +25,8 @@ for filename in files:
     with open(filename) as file:
         txt_content = file.read()
     
-    summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
-    new_summary_file_name = filename[:-4].replace("/txt_files/", "/gendered/")+'.txt'
+    summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt' # this is used to generate summaries for the same files each time
+    new_summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_led_base/")+'.txt'
     if os.path.exists(summary_file_name):
         try: 
             # START: Code for the model was found here: https://huggingface.co/docs/transformers/model_doc/led and here: https://huggingface.co/nsi319/legal-led-base-16384
