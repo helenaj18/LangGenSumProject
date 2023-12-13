@@ -50,10 +50,10 @@ This section describes the files used to scrape SeekingAlpha and generate the su
 This file gets the tickers needed for the web scraping. It does so by taking tickers for publicly listed companies, using the listing_status.csv file gotten from Alpha Vantage. These symbols are then used to webscrape Seeking Alpha for each of the symbols. This was done for about 2000 companies and html files were the output.
 
 ### Scraper.py
-This file scrapes the data from Seeking alpha
+This file scrapes the data from Seeking alpha. This is from the repo mentioned above.
 
 ### Transcripts.py
-This file assists Scraper.py to collect the data scraped in a nice way.
+This file assists Scraper.py to collect the data scraped in a nice way. This is from the repo mentioned above.
 
 ### html_to_txt.py
 This file was used to change html content from the webscraping to txt content to be able to make summaries. I ended up with 203 text transcripts and then stopped because that was enough. Two target html classes were used to get the transcript text and no unnecessary data like html tags.
@@ -100,15 +100,21 @@ This function combines multiple experiments and evaluations in one file. The *fo
 ### avg_length_data.py 
 Used to calculate the average length of the summaries. The string *folder_path* was changed to account for summaries of different models. 
 
+### calculate_perplexity.py
+This calculates the perplexity of the summaries for the specified model and saves it in a file
+
 ### mean_ppl.py
 This file calculates the mean, lowest and highest perplexity over all the summaries of a all models. 
 
 ### statistical.py
 This file calculates whether the statistical difference between two numbers is significant.
 
+### representation_bias.py
+This file calculates the representation bias for each model using the gendered datasets created by create_datasets.py
+
 ### sentiment_analysis.py
 This function calculates the average sentiment of all summaries for each model. The *folder_path* is changed to include different models. The sentiment is calculated using TextBlob: https://textblob.readthedocs.io/en/dev/
 
 
-
-
+### wordlist_count.oy
+This was used to calculate the ratio of words in the word lists vs all the words in the transcripts. The *folder_path* can be changed to fit the desired model.
