@@ -10,7 +10,7 @@ def calculate_perplexity():
     # Specify the folder path and file pattern
     folder_path = 'Outputs/summaries_longt5_CG'
     # folder_path = 'Outputs/summaries_legal_led'
-    file_pattern = '*.txt'  # Example: List all .txt files
+    file_pattern = '*.txt'   
 
     # Use glob to get a list of files that match the pattern
     files = glob.glob(os.path.join(folder_path, file_pattern))

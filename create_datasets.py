@@ -4,59 +4,131 @@ import random
 
 # Specify the folder path and file pattern
 folder_path = 'Outputs/txt_files'
-file_pattern = '*.txt'  # Example: List all .txt files
+file_pattern = '*.txt'   
 
 # Use glob to get a list of files that match the pattern
 files = glob.glob(os.path.join(folder_path, file_pattern))
 
 
-def create_only_male_dataset(female_names, male_names, files):
+def create_only_male_dataset(female_names, male_names, files,counter, pronouns_they, pronouns_their, pronouns_them):
+    file_counter = 0
     for filename in files:
-        with open(filename, "r") as file:
-            transcript = file.read()
-    
-        for name in female_names:
-            if name in transcript:
-                substitute_name = random.choice(male_names)
-                transcript = transcript.replace(name, substitute_name)
-        
-        new_dataset_filename = filename[:-4].replace("/txt_files/", "/txt_files_male_only/")+'.txt'
-        with open(new_dataset_filename, "w") as male_file:
-            male_file.write(transcript)
+        summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
+        if os.path.exists(summary_file_name):
+            if file_counter < 20:
+                with open(filename, "r") as file:
+                    transcript = file.read()
+            
+                for name in female_names:
+                    if name in transcript:
+                        substitute_name = random.choice(male_names)
+                        transcript = transcript.replace(name, substitute_name)
+                
+                for p in pronouns_they:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'they')
+                
+                for p in pronouns_their:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'their')
 
-def create_only_female_dataset(female_names, male_names, files):
+                for p in pronouns_them:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'them')
+                
+                new_dataset_filename = filename[:-4].replace("/txt_files/", "/gendered/male_only" + str(counter) + "/")+'.txt'
+                new_dir = new_dataset_filename.split("A")[0]
+                # Check whether the specified path exists or not
+                if not os.path.exists(new_dir):
+                    # Create a new directory because it does not exist
+                    os.makedirs(new_dir)
+
+                with open(new_dataset_filename, "w") as male_file:
+                    male_file.write(transcript)
+                file_counter += 1
+            else:
+                break
+
+def create_only_female_dataset(female_names, male_names, files, counter, pronouns_they, pronouns_their, pronouns_them):
+    file_counter = 0
     for filename in files:
-        with open(filename, "r") as file:
-            transcript = file.read()
-    
-        for name in male_names:
-            if name in transcript:
-                substitute_name = random.choice(female_names)
-                transcript = transcript.replace(name, substitute_name)
-        
-        new_dataset_filename = filename[:-4].replace("/txt_files/", "/txt_files_female_only/")+'.txt'
-        with open(new_dataset_filename, "w") as male_file:
-            male_file.write(transcript)
+        summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
+        if os.path.exists(summary_file_name):
+            if file_counter < 20:
+                with open(filename, "r") as file:
+                    transcript = file.read()
+            
+                for name in male_names:
+                    if name in transcript:
+                        substitute_name = random.choice(female_names)
+                        transcript = transcript.replace(name, substitute_name)
+                
+                for p in pronouns_they:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'they')
+                
+                for p in pronouns_their:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'their')
+
+                for p in pronouns_them:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'them')
+                
+                new_dataset_filename = filename[:-4].replace("/txt_files/", "/gendered/female_only" + str(counter) + "/")+'.txt'
+                new_dir = new_dataset_filename.split("A")[0]
+                # Check whether the specified path exists or not
+                if not os.path.exists(new_dir):
+                    # Create a new directory because it does not exist
+                    os.makedirs(new_dir)
+                with open(new_dataset_filename, "w") as male_file:
+                    male_file.write(transcript)
+                file_counter += 1
+            else:
+                break
+                
 
 
-def create_neutral_dataset(female_names, male_names, files):
+def create_neutral_dataset(female_names, male_names, files, counter, pronouns_they, pronouns_their, pronouns_them):
     for filename in files:
-        with open(filename, "r") as file:
-            transcript = file.read()
-    
-        for name in male_names:
-            if name in transcript:
-                substitute_name = 'FIRST_NAME'
-                transcript = transcript.replace(name, substitute_name)
-        
-        for name in female_names:
-            if name in transcript:
-                substitute_name = 'FIRST_NAME'
-                transcript = transcript.replace(name, substitute_name)
-        
-        new_dataset_filename = filename[:-4].replace("/txt_files/", "/txt_files_no_gender/")+'.txt'
-        with open(new_dataset_filename, "w") as male_file:
-            male_file.write(transcript)
+        summary_file_name = filename[:-4].replace("/txt_files/", "/summaries_legal_led/")+'.txt'
+        if os.path.exists(summary_file_name):
+            if counter < 20:
+                with open(filename, "r") as file:
+                    transcript = file.read()
+            
+                for name in male_names:
+                    if name in transcript:
+                        substitute_name = 'FIRST_NAME'
+                        transcript = transcript.replace(name, substitute_name)
+                
+                for name in female_names:
+                    if name in transcript:
+                        substitute_name = 'FIRST_NAME'
+                        transcript = transcript.replace(name, substitute_name)
+                
+                for p in pronouns_they:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'they')
+                
+                for p in pronouns_their:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'their')
+
+                for p in pronouns_them:
+                    if p in transcript:
+                        transcript = transcript.replace(p, 'them')
+                
+                new_dataset_filename = filename[:-4].replace("/txt_files/", "/gendered/no_gender" + str(counter) + "/")+'.txt'
+                new_dir = new_dataset_filename.split("A")[0]
+                # Check whether the specified path exists or not
+                if not os.path.exists(new_dir):
+                    # Create a new directory because it does not exist
+                    os.makedirs(new_dir)
+                with open(new_dataset_filename, "w") as male_file:
+                    male_file.write(transcript)
+            else:
+                break
 
 
 female_names = ["Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan",\
@@ -88,10 +160,11 @@ male_names = ["James", "Robert", "John", "Michael", "David", "William", "Richard
                                     "Carl", "Harold", "Dylan", "Arthur", "Lawrence", "Jordan", "Jesse", "Bryan", "Billy", "Bruce", "Gabriel", "Joe", "Logan", "Alan", \
                                     "Juan", "Albert", "Willie", "Elijah", "Wayne", "Randy", "Vincent", "Mason", "Roy", "Ralph", "Bobby", "Russell", "Bradley", "Philip", "Eugene"]
 
+pronouns_they = [" she ", " he "]
+pronouns_their = [" hers ", " his "]
+pronouns_them = [" him ", " her "]
 
+for i in range(10):
+    create_only_male_dataset(female_names, male_names, files, i, pronouns_they, pronouns_their, pronouns_them)
+    create_only_female_dataset(female_names, male_names, files, i, pronouns_they, pronouns_their, pronouns_them)
 
-# create_only_male_dataset(female_names, male_names, files)
-
-# create_only_female_dataset(female_names, male_names, files)
-
-create_neutral_dataset(female_names, male_names, files)

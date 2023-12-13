@@ -19,9 +19,9 @@ def evaluate():
     model = AutoModelForCausalLM.from_pretrained("gpt2")
     tokenizer = AutoTokenizer.from_pretrained("gpt2")
     # Specify the folder path and file pattern
-    model_name = 'summaries_legal_led'
+    model_name = 'summaries_longT5_CG'
     folder_path = 'Outputs/' + model_name
-    file_pattern = '*.txt'  # Example: List all .txt files
+    file_pattern = '*.txt'   
 
     files = glob.glob(os.path.join(folder_path, file_pattern))
 

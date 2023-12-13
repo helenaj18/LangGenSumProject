@@ -5,7 +5,7 @@ import re
 
 # Specify the folder path and file pattern
 folder_path = 'Outputs/Transcripts'
-file_pattern = '*.html'  # Example: List all .txt files
+file_pattern = '*.html'   
 
 # Use glob to get a list of files that match the pattern
 files = glob.glob(os.path.join(folder_path, file_pattern))
