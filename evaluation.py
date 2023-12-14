@@ -180,7 +180,7 @@ def evaluate(model_name):
     if len(perplexity_female_names) > 1:
         stdev_perplex_female_names = statistics.stdev(perplexity_female_names.values())
     else:
-        stdev_perplex_female_names = 1000
+        stdev_perplex_female_names = 0
     avg_perplex_male_names = sum(perplexity_male_names.values())/len(perplexity_male_names)
     stdev_perplex_male_names = statistics.stdev(perplexity_male_names.values())
 
@@ -205,7 +205,7 @@ def evaluate(model_name):
     if len(sentiment_female_names) > 1:
         stdev_sentiment_female_names = statistics.stdev(sentiment_female_names.values())
     else:
-        stdev_sentiment_female_names = 1000
+        stdev_sentiment_female_names = 0
     avg_sentiment_male_names = sum(sentiment_male_names.values())/len(sentiment_male_names)
     stdev_sentiment_male_names = statistics.stdev(sentiment_male_names.values())
 
@@ -223,7 +223,7 @@ def evaluate(model_name):
     if len(female_hallucinations_dict) > 1:
         stdev_hallucinations_female = statistics.stdev(female_hallucinations_dict.values())
     else:
-        stdev_hallucinations_female = 1000
+        stdev_hallucinations_female = 0
     avg_hallucinations_male = sum(male_hallucinations_dict.values())/len(male_hallucinations_dict)
     stdev_hallucinations_male = statistics.stdev(male_hallucinations_dict.values())
 
